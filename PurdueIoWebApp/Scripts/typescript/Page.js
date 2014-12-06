@@ -8,13 +8,10 @@
 // TODO: Pretty much all of it.
 var Page = (function (_super) {
     __extends(Page, _super);
-    function Page(app, parentElement) {
+    function Page(app, args) {
+        this.parentElement = app.pageContainer;
         _super.call(this, app);
     }
-    Page.prototype.show = function () {
-        this.element = document.body.appendChild(this.element);
-        this.animator.animate("in");
-    };
     return Page;
 })(Component);
 //# sourceMappingURL=Page.js.map

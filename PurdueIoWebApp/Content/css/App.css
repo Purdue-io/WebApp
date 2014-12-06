@@ -53,6 +53,21 @@ input[type=text]:focus,
 input[type=search]:focus {
   background-color: #fff;
 }
+/* Component styles */
+.COMPONENT {
+  display: none;
+}
+.page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 16px;
+}
 header {
   position: absolute;
   top: 0;
@@ -121,7 +136,8 @@ div.content div.userSideBar p {
   opacity: 0.6;
   margin: 8px 0;
 }
-div.content div.pageContent {
+div.content div.pageContainer {
+  position: relative;
   float: left;
   width: calc(100% - 288px);
   height: 100%;
@@ -130,7 +146,7 @@ div.content div.pageContent {
   box-sizing: border-box;
   padding: 16px;
 }
-div.content div.pageContent input[type=search] {
+div.content div.pageContainer input[type=search] {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -139,13 +155,14 @@ div.content div.pageContent input[type=search] {
   font-weight: 200;
   margin: 16px 4px 4px 4px;
 }
-div.pageContent ul.tiles {
+/* Components */
+ul.dataTiles {
   display: block;
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
-div.pageContent ul.tiles li {
+ul.dataTiles li {
   position: relative;
   display: inline-block;
   width: 144px;
@@ -156,12 +173,14 @@ div.pageContent ul.tiles li {
   box-sizing: border-box;
   margin: 4px;
   background-color: #e3ae24;
+  text-align: right;
+}
+ul.dataTiles li span {
   font-weight: 200;
   font-size: 54px;
   color: #fff;
-  text-align: right;
 }
-div.pageContent ul.tiles li label {
+ul.dataTiles li label {
   position: absolute;
   bottom: 8px;
   left: 8px;

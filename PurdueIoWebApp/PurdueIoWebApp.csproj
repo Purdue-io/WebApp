@@ -126,6 +126,12 @@
     <Content Include="Content\css\App.min.css">
       <DependentUpon>App.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\DataTiles.css">
+      <DependentUpon>DataTiles.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Components\DataTiles.min.css">
+      <DependentUpon>DataTiles.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\Fonts.css">
       <DependentUpon>Fonts.less</DependentUpon>
     </Content>
@@ -168,6 +174,7 @@
     <Content Include="Content\css\Fonts.css.map">
       <DependentUpon>Fonts.css</DependentUpon>
     </Content>
+    <Content Include="Scripts\es6-promise-2.0.1.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -185,6 +192,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Scripts\typescript\Data\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -192,13 +200,24 @@
     <Content Include="Content\css\Functions.css.map">
       <DependentUpon>Functions.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\DataTiles.less" />
+    <Content Include="Content\css\Constants.less" />
+    <Content Include="Content\css\Components\DataTiles.css.map">
+      <DependentUpon>DataTiles.css</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
+    <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />
+    <Content Include="Views\App\Components\DataTiles.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\definitions\es6-promise.d.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Animator.ts" />
     <TypeScriptCompile Include="Scripts\typescript\App.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Component.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Components\DataTiles.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\DataSource.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Page.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Pages\LandingPage.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

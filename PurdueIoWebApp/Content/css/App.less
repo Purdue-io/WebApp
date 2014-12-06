@@ -1,7 +1,6 @@
-﻿@import "Fonts.less";
+﻿@import "Constants.less";
+@import "Fonts.less";
 @import "Functions.less";
-
-@accent-color: #E3AE24;
 
 body {
 	background-color:#000;
@@ -20,6 +19,21 @@ input[type=text], input[type=search] {
 	&:focus {
 		background-color:#fff;
 	}
+}
+
+/* Component styles */
+.COMPONENT {
+	display:none;
+}
+
+.page {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	.box-sizing(border-box);
+	padding:16px;
 }
 
 header {
@@ -98,7 +112,8 @@ div.content {
 		}
 	}
 
-	div.pageContent {
+	div.pageContainer {
+		position:relative;
 		float:left;
 		width:calc(~"100% - 288px");
 		height:100%;
@@ -115,33 +130,5 @@ div.content {
 	}
 }
 
-div.pageContent ul.tiles {
-	display:block;
-	padding:0;
-	margin:0;
-	list-style-type:none;
-	li {
-		position:relative;
-		display:inline-block;
-		width:144px;
-		height:144px;
-		padding:4px 12px;
-		.box-sizing(border-box);
-		margin:4px;
-		background-color:@accent-color;
-		font-weight:200;
-		font-size:54px;
-		color:#fff;
-		text-align:right;
-
-		label {
-			position:absolute;
-			bottom:8px;
-			left:8px;
-			color:#fff;
-			font-weight:normal;
-			font-size:18px;
-			text-transform:lowercase;
-		}
-	}
-}
+/* Components */
+@import "Components/DataTiles.less";

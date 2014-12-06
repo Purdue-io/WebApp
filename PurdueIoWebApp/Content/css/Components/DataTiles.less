@@ -1,0 +1,36 @@
+﻿@import "../Constants.less";
+@import "../Functions.less";
+
+ul.dataTiles {
+	display:block;
+	padding:0;
+	margin:0;
+	list-style-type:none;
+	li {
+		position:relative;
+		display:inline-block;
+		width:144px;
+		height:144px;
+		padding:4px 12px;
+		.box-sizing(border-box);
+		margin:4px;
+		background-color:@accent-color;
+		text-align:right;
+
+		span {
+			font-weight:200;
+			font-size:54px;
+			color:#fff;
+		}
+
+		label {
+			position:absolute;
+			bottom:8px;
+			left:8px;
+			color:#fff;
+			font-weight:normal;
+			font-size:18px;
+			text-transform:lowercase;
+		}
+	}
+}

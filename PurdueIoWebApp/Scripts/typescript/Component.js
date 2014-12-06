@@ -12,6 +12,11 @@ var Component = (function () {
             this.app = App.instance; // Default instance if undefined
         }
 
+        // Set default parent if none is set ...
+        if (typeof this.parentElement === 'undefined') {
+            this.parentElement = document.body;
+        }
+
         // Get the component ID, grab the HTML
         this.element = document.getElementById("component_" + this.componentId).cloneNode(true);
         this.element.classList.remove("COMPONENT");
@@ -27,7 +32,7 @@ var Component = (function () {
     };
 
     Component.prototype.show = function () {
-        this.element = document.body.appendChild(this.element);
+        this.element = this.parentElement.appendChild(this.element);
         this.animator.animate("in");
     };
 
@@ -37,7 +42,7 @@ var Component = (function () {
 
         // We have 300ms to animate out before we're taken off the DOM Tree.
         setTimeout(function () {
-            _this.element = document.body.removeChild(_this.element);
+            _this.element = _this.parentElement.removeChild(_this.element);
         }, 300);
     };
 
