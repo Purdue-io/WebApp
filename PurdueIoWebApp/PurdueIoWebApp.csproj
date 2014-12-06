@@ -195,7 +195,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typescript\Animator.ts" />
     <TypeScriptCompile Include="Scripts\typescript\App.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Component.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Page.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
