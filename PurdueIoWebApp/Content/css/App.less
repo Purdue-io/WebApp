@@ -1,0 +1,147 @@
+﻿@import "Fonts.less";
+@import "Functions.less";
+
+@accent-color: #E3AE24;
+
+body {
+	background-color:#000;
+	font-family: "Open Sans";
+	color:#fff;
+}
+
+/* Common controls */
+input[type=text], input[type=search] {
+	font-family:"Open Sans";
+	background-color:#dedede;
+	border:0;
+	padding:4px 8px;
+	transition: background-color ease-in-out 150ms;
+
+	&:focus {
+		background-color:#fff;
+	}
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 96px;
+
+	ul {
+		font-family: "Open Sans";
+		font-weight: 200;
+		font-size: 52px;
+		list-style-type: none;
+		display: inline-block;
+		margin: 14px 6px;
+
+
+		li {
+			display: inline-block;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+			cursor:default;
+			transition: opacity ease-in-out 150ms;
+			
+			&:not(:last-child) {
+				opacity: 0.5;
+				cursor:pointer;
+				&:hover {
+					opacity:0.8;
+				}
+			}
+
+			&:not(:last-child):after {
+				content: " /";
+			}
+		}
+	}
+}
+
+div.content {
+	position:absolute;
+	top:96px;
+	left:0;
+	bottom:0;
+	right:0;
+
+	div.userSideBar {
+		float:left;
+		width:288px;
+		height:100%;
+		.box-sizing(border-box);
+		padding:16px;
+
+		h1 {
+			font-family:"Open Sans";
+			font-weight:900;
+			font-size:24px;
+			text-transform:uppercase;
+			margin:0;
+		}
+
+		h2 {
+			font-family:"Open Sans";
+			font-weight:200;
+			font-size:20px;
+			text-transform:lowercase;
+			margin:0;
+		}
+
+		p {
+			opacity: 0.6;
+			margin:8px 0;
+		}
+	}
+
+	div.pageContent {
+		float:left;
+		width:calc(~"100% - 288px");
+		height:100%;
+		.box-sizing(border-box);
+		padding:16px;
+
+		input[type=search] {
+			.box-sizing(border-box);
+			width:300px;
+			font-size:24px;
+			font-weight:200;
+			margin:16px 4px 4px 4px;
+		}
+	}
+}
+
+div.pageContent ul.tiles {
+	display:block;
+	padding:0;
+	margin:0;
+	list-style-type:none;
+	li {
+		position:relative;
+		display:inline-block;
+		width:144px;
+		height:144px;
+		padding:4px 12px;
+		.box-sizing(border-box);
+		margin:4px;
+		background-color:@accent-color;
+		font-weight:200;
+		font-size:54px;
+		color:#fff;
+		text-align:right;
+
+		label {
+			position:absolute;
+			bottom:8px;
+			left:8px;
+			color:#fff;
+			font-weight:normal;
+			font-size:18px;
+			text-transform:lowercase;
+		}
+	}
+}

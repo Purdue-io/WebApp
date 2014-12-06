@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Purdue.io</title>
+	@Styles.Render("~/bundles/css")
+</head>
+<body>
+    <header>
+		<ul>
+			<li>Purdue.io</li>
+			<li>Spring 2015</li>
+		</ul>
+	</header>
+	<div class="content">
+		<div class="userSideBar">
+			<h1>Hayden McAfee</h1>
+			<h2>time ticket</h2>
+			<p>unknown</p>
+			<h2>schedule</h2>
+			<p>unknown</p>
+			<h2>pinned sections</h2>
+			<p>unknown</p>
+		</div>
+		<div class="pageContent">
+			<ul class="tiles">
+				<li>27<label>Subjects</label></li>
+				<li>3.6k<label>Courses</label></li>
+				<li>45<label>Buildings</label></li>
+				<li>13<label>Days Left</label></li>
+			</ul>
+			<input type="search" placeholder="Find a course" />
+		</div>
+	</div>
+	@Scripts.Render("~/bundles/typescript")
+</body>
+</html>
