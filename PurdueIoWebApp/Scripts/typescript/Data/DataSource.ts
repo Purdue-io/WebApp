@@ -40,6 +40,22 @@
 	public fetchTermCourseCount(term: Term): Promise<number> {
 		return JsonRequest.httpGet<number>(DataSource.APIURL + "/odata/Courses/$count/?$filter=(Classes/any(c:%20c/Term/TermId%20eq%20" + term.TermId + "))");
 	}
+
+	/**
+	 * Fetches a count of sections that belong to classes listed in the given term
+	 * @return Promise, resolved with number or rejected on request failure
+	 */
+	public fetchTermSectionCount(term: Term): Promise<number> {
+		return JsonRequest.httpGet<number>(DataSource.APIURL + "/odata/Sections/$count/?$filter=(Class/Term/TermId%20eq%20" + term.TermId + ")");
+	}
+
+	/**
+	 * Fetches a count of full sections that belong to classes listed in the given term
+	 * @return Promise, resolved with number or rejected on request failure
+	 */
+	public fetchTermFilledSectionCount(term: Term): Promise<number> {
+		return JsonRequest.httpGet<number>(DataSource.APIURL + "/odata/Sections/$count/?$filter=((Class/Term/TermId%20eq%20" + term.TermId + ")%20and%20(RemainingSpace%20eq%200))");
+	}
 }
 
 // Defining a default API url here - this can be overridden by Debug.ts
