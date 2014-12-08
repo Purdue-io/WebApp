@@ -41,7 +41,7 @@ class LandingPage extends Page {
 		});
 		// Percent full tile
 		this.tiles.addTile({
-			label: "Full Sections", data: "...", source: () => {
+			label: "Sections Full", data: "...", source: () => {
 				return new Promise<string>((resolve: (result: string) => void, reject: () => void) => {
 					this.getApp().dataSource.fetchTermSectionCount(this.term).then((totalCount: number) => {
 						this.getApp().dataSource.fetchTermFilledSectionCount(this.term).then((filledCount: number) => {
