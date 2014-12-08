@@ -42,6 +42,7 @@ header {
 	left: 0;
 	right: 0;
 	height: 96px;
+	overflow: hidden;
 
 	ul {
 		font-family: "Open Sans";
@@ -50,6 +51,7 @@ header {
 		list-style-type: none;
 		display: inline-block;
 		margin: 14px 6px;
+		white-space: nowrap;
 
 
 		li {
@@ -131,4 +133,5 @@ div.content {
 }
 
 /* Components */
+@import "Components/GlobalProgressIndicator.less";
 @import "Components/DataTiles.less";

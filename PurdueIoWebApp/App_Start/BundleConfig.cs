@@ -10,13 +10,37 @@ namespace PurdueIoWebApp
 		{
 			bundles.Add(new ScriptBundle("~/bundles/javascript").Include("~/Scripts/es6-promise-2.0.1.js"));
 
-			bundles.Add(new ScriptBundle("~/bundles/typescript").Include(
-						"~/Scripts/typescript/Component.js",
-						"~/Scripts/typescript/Animator.js",
-						"~/Scripts/typescript/Page.js",
-						"~/Scripts/typescript/App.js",
-						"~/Scripts/typescript/Components/DataTiles.js",
-						"~/Scripts/typescript/Pages/LandingPage.js"));
+			// Typescript
+			var tsBundle = new ScriptBundle("~/bundles/typescript");
+
+			// TS Core
+			tsBundle.Include(
+				"~/Scripts/typescript/Component.js",
+				"~/Scripts/typescript/Animator.js",
+				"~/Scripts/typescript/Page.js",
+				"~/Scripts/typescript/App.js");
+
+			// TS Data
+			tsBundle.Include(
+				"~/Scripts/typescript/Data/JsonRequest.js",
+				"~/Scripts/typescript/Data/DataSource.js",
+				"~/Scripts/typescript/Models/Term.js");
+
+			// TS Components
+			tsBundle.Include(
+				"~/Scripts/typescript/Components/GlobalProgressIndicator.js",
+				"~/Scripts/typescript/Components/DataTiles.js");
+
+			// TS Pages
+			tsBundle.Include(
+				"~/Scripts/typescript/Pages/LandingPage.js");
+
+#if DEBUG
+			// Include debug JS if we're in debug mode (sets debug API URL, etc)
+			tsBundle.Include("~/Scripts/typescript/DEBUG.js");
+#endif
+
+			bundles.Add(tsBundle);
 
 			bundles.Add(new StyleBundle("~/bundles/css").Include(
 					  "~/Content/css/App.css"));

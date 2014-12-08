@@ -12,9 +12,9 @@
 </head>
 <body>
     <header>
+		<!-- TODO: This should be a component. -->
 		<ul>
 			<li>Purdue.io</li>
-			<li>Spring 2015</li>
 		</ul>
 	</header>
 	<div class="content">
@@ -40,6 +40,7 @@
 	
 	<!-- include components -->
 	<!-- COMPONENTS -->
+	@RenderPage("Components/GlobalProgressIndicator.cshtml")
 	@RenderPage("Components/DataTiles.cshtml")
 	<!-- PAGES -->
 	@RenderPage("Components/Pages/LandingPage.cshtml")
