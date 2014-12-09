@@ -42,6 +42,13 @@ body {
   color: #fff;
 }
 /* Common controls */
+h1 {
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-top: 0;
+  padding-top: 0;
+  border-bottom: 4px solid #e3ae24;
+}
 input[type=text],
 input[type=search] {
   font-family: "Open Sans";
@@ -103,7 +110,7 @@ header ul li:not(:last-child):hover {
   opacity: 0.8;
 }
 header ul li:not(:last-child):after {
-  content: " /";
+  content: "\00a0/\00a0";
 }
 div.content {
   position: absolute;
@@ -126,6 +133,7 @@ div.content div.userSideBar h1 {
   font-weight: 900;
   font-size: 24px;
   text-transform: uppercase;
+  border: none;
   margin: 0;
 }
 div.content div.userSideBar h2 {
@@ -261,5 +269,26 @@ ul.dataTiles li label {
   font-weight: normal;
   font-size: 18px;
   text-transform: lowercase;
+}
+/* Pages */
+/* TermSelectPage Page */
+.page.termSelectPage ul.terms {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.page.termSelectPage ul.terms li {
+  display: inline-block;
+  width: calc(50% - 8px);
+  max-width: 288px;
+  margin: 4px;
+}
+.page.termSelectPage ul.terms li a {
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 32px;
+  color: #e3ae24;
+  text-decoration: none;
 }
 /*# sourceMappingURL=App.css.map */

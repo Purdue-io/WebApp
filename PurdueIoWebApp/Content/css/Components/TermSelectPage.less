@@ -1,0 +1,25 @@
+﻿@import "../Constants.less";
+
+/* TermSelectPage Page */
+.page.termSelectPage {
+	ul.terms {
+		list-style-type:none;
+		margin:0;
+		padding:0;
+		width:100%;
+
+		li {
+			display:inline-block;
+			width:calc(~"50% - 8px");
+			max-width:288px;
+			margin:4px;
+			a {
+				cursor:pointer;
+				font-weight:900;
+				font-size:32px;
+				color:@accent-color;
+				text-decoration:none;
+			}
+		}
+	}
+}

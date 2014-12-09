@@ -9,6 +9,14 @@ body {
 }
 
 /* Common controls */
+h1 {
+	font-weight:900;
+	text-transform:uppercase;
+	margin-top:0;
+	padding-top:0;
+	border-bottom:4px solid @accent-color;
+}
+
 input[type=text], input[type=search] {
 	font-family:"Open Sans";
 	background-color:#dedede;
@@ -72,7 +80,7 @@ header {
 			}
 
 			&:not(:last-child):after {
-				content: " /";
+				content: "\00a0/\00a0";
 			}
 		}
 	}
@@ -97,6 +105,7 @@ div.content {
 			font-weight:900;
 			font-size:24px;
 			text-transform:uppercase;
+			border:none;
 			margin:0;
 		}
 
@@ -135,3 +144,6 @@ div.content {
 /* Components */
 @import "Components/GlobalProgressIndicator.less";
 @import "Components/DataTiles.less";
+
+/* Pages */
+@import "Components/TermSelectPage.less";

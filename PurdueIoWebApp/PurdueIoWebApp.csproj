@@ -138,6 +138,12 @@
     <Content Include="Content\css\Components\GlobalProgressIndicator.min.css">
       <DependentUpon>GlobalProgressIndicator.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\TermSelectPage.css">
+      <DependentUpon>TermSelectPage.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Components\TermSelectPage.min.css">
+      <DependentUpon>TermSelectPage.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\Fonts.css">
       <DependentUpon>Fonts.less</DependentUpon>
     </Content>
@@ -215,10 +221,16 @@
     <Content Include="Content\css\Components\GlobalProgressIndicator.css.map">
       <DependentUpon>GlobalProgressIndicator.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\TermSelectPage.less" />
+    <Content Include="Content\css\Components\TermSelectPage.css.map">
+      <DependentUpon>TermSelectPage.css</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />
     <Content Include="Views\App\Components\DataTiles.cshtml" />
     <Content Include="Views\App\Components\GlobalProgressIndicator.cshtml" />
+    <Content Include="Views\App\Components\Dialog.cshtml" />
+    <Content Include="Views\App\Components\Pages\TermSelectPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\definitions\es6-promise.d.ts" />
@@ -226,6 +238,7 @@
     <TypeScriptCompile Include="Scripts\typescript\App.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Component.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\DataTiles.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Components\Dialog.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\GlobalProgressIndicator.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\DataSource.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\JsonRequest.ts" />
@@ -233,6 +246,7 @@
     <TypeScriptCompile Include="Scripts\typescript\DEBUG.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Page.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\LandingPage.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Pages\TermSelectPage.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

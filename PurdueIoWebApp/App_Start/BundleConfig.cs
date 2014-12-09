@@ -33,6 +33,7 @@ namespace PurdueIoWebApp
 
 			// TS Pages
 			tsBundle.Include(
+				"~/Scripts/typescript/Pages/TermSelectPage.js",
 				"~/Scripts/typescript/Pages/LandingPage.js");
 
 #if DEBUG

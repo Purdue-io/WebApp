@@ -9,8 +9,12 @@ class Component {
 	public element: HTMLElement;
 	public parentElement: HTMLElement;
 	public animator: Animator;
+	public isHidden: boolean;
 
 	constructor(app: App) {
+		// We start hidden...
+		this.isHidden = true;
+
 		// Make sure we're associated with an application instance...
 		if (app != null) {
 			this.app = app;
@@ -39,11 +43,19 @@ class Component {
 	}
 
 	public show(): void {
+		if (!this.isHidden) {
+			return;
+		}
+		this.isHidden = false;
 		this.element = <HTMLElement>this.parentElement.appendChild(this.element);
 		this.animator.animate("in") // IN is the default event for showing.
 	}
 
 	public hide(): void {
+		if (this.isHidden) {
+			return;
+		}
+		this.isHidden = true;
 		this.animator.animate("out") // OUT is the default event for showing.
 		// We have 300ms to animate out before we're taken off the DOM Tree.
 		setTimeout(() => {

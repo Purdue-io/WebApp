@@ -1,0 +1,21 @@
+﻿/* TermSelectPage Page */
+.page.termSelectPage ul.terms {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.page.termSelectPage ul.terms li {
+  display: inline-block;
+  width: calc(50% - 8px);
+  max-width: 288px;
+  margin: 4px;
+}
+.page.termSelectPage ul.terms li a {
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 32px;
+  color: #e3ae24;
+  text-decoration: none;
+}
+/*# sourceMappingURL=TermSelectPage.css.map */

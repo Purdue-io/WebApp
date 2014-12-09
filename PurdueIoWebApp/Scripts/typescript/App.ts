@@ -26,6 +26,9 @@ class App {
 
 		// Instantiate core components
 		this.progressIndicator = new GlobalProgressIndicator(this);
+
+		// Initialize back stack
+		this.pageStack = new Array<Page>();
 	}
 
 	/**
@@ -34,6 +37,9 @@ class App {
 	public start() {
 		// Show core components
 		this.progressIndicator.show();
+
+		// Add a term select page to our back-stack
+		this.navigate(new TermSelectPage(this), true);
 
 		// Get our term list
 		this.progressIndicator.pushWork();
@@ -53,22 +59,52 @@ class App {
 	}
 
 	/**
-	 * Navigates to a new page, adding it to the back-stack and displaying it.
-	 * 
-	 * @param page The page to navigate to
+	 * Navigates back to a particular page in the back-stack
+	 * @page The page (present in the back-stack) to return to
 	 */
-	public navigate(page: Page) {
-		// Add an element in the back-stack for this page
-		var backstackElement = document.createElement("li");
-		backstackElement.innerHTML = page.pageTitle;
-		this.navElement.appendChild(backstackElement);
+	public navigateBackTo(page: Page) {
+		var stackIndex: number = this.pageStack.indexOf(page);
 
+		// Don't do anything if this page is already showing.
+		if (stackIndex == this.pageStack.length - 1) {
+			return;
+		}
+
+		this.pageStack[this.pageStack.length - 1].hide(); // Hide last page on stack
+		this.pageStack.splice(stackIndex + 1, this.pageStack.length - (stackIndex + 1)); // Remove pages from back stack
+
+		// Remove pages from nav
+		var backstackNavElements = this.navElement.querySelectorAll("li");
+		for (var i = backstackNavElements.length - 1; i > stackIndex; i--) {
+			backstackNavElements[i].parentNode.removeChild(backstackNavElements[i]);
+		}
+
+		// Show last page on stack
+		this.pageStack[this.pageStack.length - 1].show();
+	}
+
+	/**
+	 * Navigates to a new page, adding it to the back-stack and displaying it.
+	 * @param page The page to navigate to
+	 * @param hidden If true, the page will not be displayed once added to the back stack
+	 */
+	public navigate(page: Page, hidden?: boolean) {
 		if (this.pageStack.length > 0) {
 			this.pageStack[this.pageStack.length - 1].hide(); // Hide last page on stack
 		}
-
 		this.pageStack.push(page);
-		page.show(); // Show the new page
+
+		// Add an element in the back-stack for this page
+		var backstackElement = document.createElement("li");
+		backstackElement.innerHTML = page.pageTitle;
+		backstackElement.addEventListener("click", () => {
+			this.navigateBackTo(page);
+		});
+		this.navElement.appendChild(backstackElement);
+
+		if (typeof hidden === 'undefined' || hidden == false) {
+			page.show(); // Show the new page
+		}
 	}
 }
 
