@@ -33,4 +33,16 @@ ul.dataTiles li label {
   font-size: 18px;
   text-transform: lowercase;
 }
+@media (max-width: 768px) {
+  ul.dataTiles li {
+    width: 128px;
+    height: 128px;
+  }
+  ul.dataTiles li span {
+    font-size: 46px;
+  }
+  ul.dataTiles li label {
+    font-size: 14px;
+  }
+}
 /*# sourceMappingURL=DataTiles.css.map */
