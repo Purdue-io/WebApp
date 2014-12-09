@@ -15,18 +15,19 @@
 		for (var i = 0; i < animated_elements.length; i++) {
 			var el = animated_elements.item(i);
 			if (typeof el.attributes[attr] !== 'undefined') {
-				(<HTMLElement>el).classList.add(el.attributes[attr].value);
-				(function (element: HTMLElement, classname) {
-					setTimeout(function () { element.classList.remove(classname); }, 300);
-				})(<HTMLElement>el, el.attributes[attr].value);
+				Animator.animateElement(el, el.attributes[attr].value);
 			}
 		}
 		// Is the component container itself animated?
 		if (typeof component_el.attributes[attr] !== 'undefined') {
-			(<HTMLElement>component_el).classList.add(component_el.attributes[attr].value);
-			(function (element: HTMLElement, classname) {
-				setTimeout(function () { element.classList.remove(classname); }, 300);
-			})(<HTMLElement>component_el, component_el.attributes[attr].value);
+			Animator.animateElement(component_el, component_el.attributes[attr].value);
 		}
+	}
+
+	public static animateElement(element: Node, animationName: string) {
+		(<HTMLElement>element).classList.add(animationName);
+		(function (element: HTMLElement, classname) {
+			setTimeout(function () { element.classList.remove(classname); }, 300);
+		})(<HTMLElement>element, animationName);
 	}
 } 

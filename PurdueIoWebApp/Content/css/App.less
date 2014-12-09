@@ -92,6 +92,8 @@ div.content {
 	left:0;
 	bottom:0;
 	right:0;
+	.perspective(1000px);
+	overflow:hidden;
 
 	div.userSideBar {
 		float:left;
@@ -130,6 +132,7 @@ div.content {
 		height:100%;
 		.box-sizing(border-box);
 		padding:16px;
+		.perspective(inherit);
 
 		input[type=search] {
 			.box-sizing(border-box);
@@ -140,6 +143,9 @@ div.content {
 		}
 	}
 }
+
+/* Animations */
+@import "Animations.less";
 
 /* Components */
 @import "Components/GlobalProgressIndicator.less";

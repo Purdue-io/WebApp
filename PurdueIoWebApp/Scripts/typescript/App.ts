@@ -97,11 +97,12 @@ class App {
 		// Add an element in the back-stack for this page
 		var backstackElement = document.createElement("li");
 		backstackElement.innerHTML = page.pageTitle;
+		backstackElement.classList.add("animated");
 		backstackElement.addEventListener("click", () => {
 			this.navigateBackTo(page);
 		});
 		this.navElement.appendChild(backstackElement);
-
+		Animator.animateElement(backstackElement, "anim-shove-in-left");
 		if (typeof hidden === 'undefined' || hidden == false) {
 			page.show(); // Show the new page
 		}

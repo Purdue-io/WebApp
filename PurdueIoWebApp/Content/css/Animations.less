@@ -1,0 +1,97 @@
+﻿@import "Functions.less";
+
+/* Default animations */
+
+/* Page transitions */
+@-moz-keyframes anim-page-in {
+	from {
+		opacity:0;
+		.transform(translate3d(0,0,200px));
+	}
+	to {
+		.transform(translate3d(0,0,0));
+	}
+}
+
+@-webkit-keyframes anim-page-in {
+	from {
+		opacity:0;
+		.transform(translate3d(0,0,200px));
+	}
+	to {
+		.transform(translate3d(0,0,0));
+	}
+}
+
+@keyframes anim-page-in {
+	from {
+		opacity:0;
+		.transform(translate3d(0,0,200px));
+	}
+	to {
+		.transform(translate3d(0,0,0));
+	}
+}
+
+.animated.anim-page-in {
+	.animation-name(anim-page-in);
+	.animation-duration(250ms);
+	.animation-timing-function(cubic-bezier(0.230, 1.000, 0.320, 1.000));
+	.animation-iteration-count(1);
+	//.animation-fill-mode(forwards);
+}
+
+@keyframes anim-page-out {
+	from {
+		.transform(translate3d(0,0,0));
+	}
+	to {
+		opacity:0;
+		.transform(translate3d(0,0,-200px));
+	}
+}
+
+.animated.anim-page-out {
+	.animation-name(anim-page-out);
+	.animation-duration(250ms);
+	.animation-timing-function(cubic-bezier(0.230, 1.000, 0.320, 1.000));
+	.animation-iteration-count(1);
+	.animation-fill-mode(forwards);
+}
+
+/* General animations */
+@-moz-keyframes anim-shove-in-left {
+	from {
+		.transform(translate3d(-60px,0,0));
+		opacity:0;
+	}
+	to {
+		
+	}
+}
+@-webkit-keyframes anim-shove-in-left {
+	from {
+		.transform(translate3d(-60px,0,0));
+		opacity:0;
+	}
+	to {
+		
+	}
+}
+@keyframes anim-shove-in-left {
+	from {
+		.transform(translate3d(-60px,0,0));
+		opacity:0;
+	}
+	to {
+		
+	}
+}
+
+.animated.anim-shove-in-left {
+	.animation-name(anim-shove-in-left);
+	.animation-duration(300ms);
+	.animation-timing-function(cubic-bezier(0.165, 0.840, 0.440, 1.000));
+	.animation-iteration-count(1);
+	//.animation-fill-mode(forwards);
+}

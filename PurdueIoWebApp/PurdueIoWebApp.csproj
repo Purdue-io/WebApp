@@ -120,6 +120,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\Animations.css">
+      <DependentUpon>Animations.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Animations.min.css">
+      <DependentUpon>Animations.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\App.css">
       <DependentUpon>App.less</DependentUpon>
     </Content>
@@ -224,6 +230,10 @@
     <Content Include="Content\css\Components\TermSelectPage.less" />
     <Content Include="Content\css\Components\TermSelectPage.css.map">
       <DependentUpon>TermSelectPage.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Animations.less" />
+    <Content Include="Content\css\Animations.css.map">
+      <DependentUpon>Animations.css</DependentUpon>
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />
