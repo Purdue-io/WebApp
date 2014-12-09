@@ -144,6 +144,12 @@
     <Content Include="Content\css\Components\GlobalProgressIndicator.min.css">
       <DependentUpon>GlobalProgressIndicator.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\LandingPage.css">
+      <DependentUpon>LandingPage.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Components\LandingPage.min.css">
+      <DependentUpon>LandingPage.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\Components\TermSelectPage.css">
       <DependentUpon>TermSelectPage.less</DependentUpon>
     </Content>
@@ -234,6 +240,10 @@
     <Content Include="Content\css\Animations.less" />
     <Content Include="Content\css\Animations.css.map">
       <DependentUpon>Animations.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Components\LandingPage.less" />
+    <Content Include="Content\css\Components\LandingPage.css.map">
+      <DependentUpon>LandingPage.css</DependentUpon>
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />

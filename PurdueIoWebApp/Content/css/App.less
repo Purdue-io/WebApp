@@ -102,6 +102,10 @@ div.content {
 		.box-sizing(border-box);
 		padding:16px;
 
+		@media (max-width: @mobile-width) {
+			margin-left:-288px;
+		}
+
 		h1 {
 			font-family:"Open Sans";
 			font-weight:900;
@@ -133,13 +137,10 @@ div.content {
 		.box-sizing(border-box);
 		padding:16px;
 		.perspective(inherit);
+		overflow:auto;
 
-		input[type=search] {
-			.box-sizing(border-box);
-			width:300px;
-			font-size:24px;
-			font-weight:200;
-			margin:16px 4px 4px 4px;
+		@media (max-width: @mobile-width) {
+			width:100%;
 		}
 	}
 }
@@ -152,4 +153,5 @@ div.content {
 @import "Components/DataTiles.less";
 
 /* Pages */
+@import "Components/LandingPage.less";
 @import "Components/TermSelectPage.less";

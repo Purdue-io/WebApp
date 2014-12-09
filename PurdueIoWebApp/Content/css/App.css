@@ -133,6 +133,11 @@ div.content div.userSideBar {
   box-sizing: border-box;
   padding: 16px;
 }
+@media (max-width: 768px) {
+  div.content div.userSideBar {
+    margin-left: -288px;
+  }
+}
 div.content div.userSideBar h1 {
   font-family: "Open Sans";
   font-weight: 900;
@@ -165,15 +170,12 @@ div.content div.pageContainer {
   -ms-perspective: inherit;
   -webkit-perspective: inherit;
   perspective: inherit;
+  overflow: auto;
 }
-div.content div.pageContainer input[type=search] {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 300px;
-  font-size: 24px;
-  font-weight: 200;
-  margin: 16px 4px 4px 4px;
+@media (max-width: 768px) {
+  div.content div.pageContainer {
+    width: 100%;
+  }
 }
 /* Animations */
 /* Default animations */
@@ -440,6 +442,15 @@ ul.dataTiles li label {
   text-transform: lowercase;
 }
 /* Pages */
+input[type=search] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 300px;
+  font-size: 24px;
+  font-weight: 200;
+  margin: 16px 4px 4px 4px;
+}
 /* TermSelectPage Page */
 .page.termSelectPage ul.terms {
   list-style-type: none;
