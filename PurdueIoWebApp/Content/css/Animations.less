@@ -41,6 +41,26 @@
 	//.animation-fill-mode(forwards);
 }
 
+@-moz-keyframes anim-page-out {
+	from {
+		.transform(translate3d(0,0,0));
+	}
+	to {
+		opacity:0;
+		.transform(translate3d(0,0,-200px));
+	}
+}
+
+@-webkit-keyframes anim-page-out {
+	from {
+		.transform(translate3d(0,0,0));
+	}
+	to {
+		opacity:0;
+		.transform(translate3d(0,0,-200px));
+	}
+}
+
 @keyframes anim-page-out {
 	from {
 		.transform(translate3d(0,0,0));
