@@ -561,6 +561,10 @@ ul.dataTiles li {
   margin: 4px;
   background-color: #e3ae24;
   text-align: right;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 ul.dataTiles li span {
   font-weight: 200;

@@ -37,7 +37,8 @@ namespace PurdueIoWebApp
 			// TS Pages
 			tsBundle.Include(
 				"~/Scripts/typescript/Pages/TermSelectPage.js",
-				"~/Scripts/typescript/Pages/LandingPage.js");
+				"~/Scripts/typescript/Pages/LandingPage.js",
+				"~/Scripts/typescript/Pages/SubjectPage.js");
 
 #if DEBUG
 			// Include debug JS if we're in debug mode (sets debug API URL, etc)

@@ -64,6 +64,22 @@
 	public fetchTermFilledSectionCount(term: Term): Promise<number> {
 		return JsonRequest.httpGet<number>(DataSource.APIURL + "/odata/Sections/$count/?$filter=((Class/Term/TermId%20eq%20" + term.TermId + ")%20and%20(RemainingSpace%20eq%200))");
 	}
+
+	/**
+	 * Fetches a count of courses in a particular subject and term
+	 * @return Promise, resolved with number or rejected on request failure
+	 */
+	public fetchTermSubjectCoursesCount(term: Term, subject: Subject): Promise<number> {
+		return JsonRequest.httpGet<number>(DataSource.APIURL + "/odata/Courses/$count/?$filter=(Classes/any(c:%20c/Term/TermId%20eq%20" + term.TermId + "))%20and%20Subject/SubjectId%20eq%20" + subject.SubjectId);
+	}
+
+	/**
+	 * Fetches a count of instructors in a particular subject and term
+	 * @return Promise, resolved with number or rejected on request failure
+	 */
+	public fetchTermSubjectInstructorsCount(term: Term, subject: Subject): Promise<number> {
+		return JsonRequest.httpGet<number>(DataSource.APIURL + "/odata/Instructors/$count/?$filter=(Meetings/any(m:%20m/Section/Class/Course/Subject/SubjectId%20eq%20" + subject.SubjectId + "%20and%20m/Section/Class/Term/TermId%20eq%20" + term.TermId + "))");
+	}
 }
 
 // Defining a default API url here - this can be overridden by Debug.ts

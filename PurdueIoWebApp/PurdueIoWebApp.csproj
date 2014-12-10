@@ -271,6 +271,7 @@
     <Content Include="Views\App\Components\GlobalProgressIndicator.cshtml" />
     <Content Include="Views\App\Components\Dialog.cshtml" />
     <Content Include="Views\App\Components\Pages\TermSelectPage.cshtml" />
+    <Content Include="Views\App\Components\Pages\SubjectPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\definitions\es6-promise.d.ts" />
@@ -288,6 +289,7 @@
     <TypeScriptCompile Include="Scripts\typescript\DEBUG.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Page.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\LandingPage.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Pages\SubjectPage.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\TermSelectPage.ts" />
   </ItemGroup>
   <PropertyGroup>
