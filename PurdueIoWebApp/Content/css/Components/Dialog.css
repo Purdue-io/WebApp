@@ -58,4 +58,19 @@ div.dialogContainer div.dialog ul.actions li a {
   text-transform: lowercase;
   font-size: 20px;
 }
+@media (max-width: 768px) {
+  div.dialogContainer div.dialog header {
+    height: 64px;
+    padding-top: 0;
+    padding-left: 8px;
+    font-size: 42px;
+  }
+  div.dialogContainer div.dialog div.content {
+    height: calc(100% - 112px);
+  }
+  div.dialogContainer div.dialog ul.actions {
+    height: 48px;
+    padding-top: 8px;
+  }
+}
 /*# sourceMappingURL=Dialog.css.map */

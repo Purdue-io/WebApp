@@ -55,5 +55,21 @@ div.dialogContainer {
 				}
 			}
 		}
+
+		@media (max-width: @mobile-width) {
+			header {
+				height:64px;
+				padding-top:0;
+				padding-left:8px;
+				font-size:42px;
+			}
+			div.content {
+				height: calc(~"100% - 112px");
+			}
+			ul.actions {
+				height:48px;
+				padding-top: 8px;
+			}
+		}
 	}
 }

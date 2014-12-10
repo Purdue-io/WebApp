@@ -646,6 +646,21 @@ div.dialogContainer div.dialog ul.actions li a {
   text-transform: lowercase;
   font-size: 20px;
 }
+@media (max-width: 768px) {
+  div.dialogContainer div.dialog header {
+    height: 64px;
+    padding-top: 0;
+    padding-left: 8px;
+    font-size: 42px;
+  }
+  div.dialogContainer div.dialog div.content {
+    height: calc(100% - 112px);
+  }
+  div.dialogContainer div.dialog ul.actions {
+    height: 48px;
+    padding-top: 8px;
+  }
+}
 div.dialogContainer div.dialog ul.subjects {
   list-style-type: none;
   margin: 0;
@@ -668,6 +683,15 @@ div.dialogContainer div.dialog ul.subjects li div.abbreviation {
 }
 div.dialogContainer div.dialog ul.subjects li span.name {
   font-weight: 200;
+}
+@media (max-width: 768px) {
+  div.dialogContainer div.dialog ul.subjects li {
+    font-size: 20px;
+    padding: 6px;
+  }
+  div.dialogContainer div.dialog ul.subjects li div.abbreviation {
+    width: 72px;
+  }
 }
 /* Pages */
 input[type=search] {
