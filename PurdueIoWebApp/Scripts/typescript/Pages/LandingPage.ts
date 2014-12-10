@@ -4,6 +4,7 @@
  */
 class LandingPage extends Page {
 	public term: Term;
+
 	// Sub-components:
 	public tiles: DataTiles;
 
@@ -19,38 +20,60 @@ class LandingPage extends Page {
 		// Prepare the tiles!
 		this.tiles = new DataTiles(this.getApp());
 		this.tiles.parentElement = this.element;
+
 		// Subject count tile
-		this.tiles.addTile({
-			label: "Subjects", data: "...", source: () => {
+		var subjectsTile: DataTileDefinition = {
+			label: "Subjects",
+			data: "...",
+			source: () => {
 				return new Promise<string>((resolve: (result: string) => void, reject: () => void) => {
 					this.getApp().dataSource.fetchTermSubjectCount(this.term).then((result: number) => {
 						resolve(result.toString());
 					});
 				});
+			},
+			action: () => {
+				var dialog = new SubjectSelectionDialog(this.getApp(), term);
+				dialog.show();
 			}
-		});
+		};
+		this.tiles.addTile(subjectsTile);
+
 		// Course count tile
-		this.tiles.addTile({
-			label: "Courses", data: "...", source: () => {
+		var coursesTile: DataTileDefinition = {
+			label: "Courses",
+			data: "...",
+			source: () => {
 				return new Promise<string>((resolve: (result: string) => void, reject: () => void) => {
 					this.getApp().dataSource.fetchTermCourseCount(this.term).then((result: number) => {
-						resolve(parseFloat((result/1000).toString()).toFixed(1) + "k"); // Format the number to '4.2k'
+						resolve(parseFloat((result / 1000).toString()).toFixed(1) + "k"); // Format the number to '4.2k'
 					});
 				});
+			},
+			action: () => {
+
 			}
-		});
+		};
+		this.tiles.addTile(coursesTile);
+
 		// Percent full tile
-		this.tiles.addTile({
-			label: "Sections Full", data: "...", source: () => {
+		var percentTile: DataTileDefinition = {
+			label: "Sections Full",
+			data: "...",
+			source: () => {
 				return new Promise<string>((resolve: (result: string) => void, reject: () => void) => {
 					this.getApp().dataSource.fetchTermSectionCount(this.term).then((totalCount: number) => {
 						this.getApp().dataSource.fetchTermFilledSectionCount(this.term).then((filledCount: number) => {
-							resolve(parseFloat( ( (filledCount / totalCount)*100 ).toString()).toFixed(0) + "%"); // Format the number to %
+							resolve(parseFloat(((filledCount / totalCount) * 100).toString()).toFixed(0) + "%"); // Format the number to %
 						});
 					});
 				});
+			},
+			action: () => {
+
 			}
-		});
+		};
+		this.tiles.addTile(percentTile);
 	}
 
 	public show(): void {

@@ -1,5 +1,15 @@
-﻿class DataTiles extends Component {
-	public tiles: Array<{ label: string; data: string; source: () => Promise<string>; }>;
+﻿class DataTileDefinition {
+	public label: string;
+	public data: string;
+	public source: () => Promise<string>;
+	public action: () => void;
+}
+
+/**
+ * The datatiles component represents various measures of data on 'tiles'.
+ */
+class DataTiles extends Component {
+	public tiles: Array<DataTileDefinition>;
 
 	constructor(app) {
 		this.componentId = "DataTiles";
@@ -10,12 +20,12 @@
 		}
 	}
 
-	public addTile(tile: { label: string; data: string; source: () => Promise<string>; }) {
+	public addTile(tile: DataTileDefinition) {
 		this.tiles.push(tile);
 		this.renderTile(tile);
 	}
 
-	private renderTile(tile: { label: string; data: string; source: () => Promise<string>; }) {
+	private renderTile(tile: DataTileDefinition) {
 		var tileElement = <HTMLElement>document.createElement("li");
 		var data = document.createElement("span");
 		data.innerHTML = tile.data;
@@ -23,7 +33,7 @@
 		var label = document.createElement("label");
 		label.innerText = tile.label;
 		tileElement.appendChild(label);
-
+		tileElement.addEventListener("click", tile.action);
 		tileElement = <HTMLElement>this.element.appendChild(tileElement);
 
 		tile.source().then((val: string) => {

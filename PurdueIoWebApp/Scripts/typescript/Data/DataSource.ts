@@ -26,6 +26,14 @@
 	}
 
 	/**
+	 * Fetches an array of subjects ordered by abbreviation in the given term
+	 * @return Promise, resolved with Subject Array or rejected on failure
+	 */
+	public fetchTermSubjects(term: Term): Promise<Array<Subject>> {
+		return JsonRequest.httpGet<Array<Subject>>(DataSource.APIURL + "/odata/Subjects/?$filter=(Courses/any(c:%20c/Classes/any(cc:%20cc/Term/TermId%20eq%20" + term.TermId + ")))&$orderby=Abbreviation%20asc");
+	}
+
+	/**
 	 * Fetches a count of subjects that have classes listed in the given term
 	 * @return Promise, resolved with number or rejected on request failure
 	 */
