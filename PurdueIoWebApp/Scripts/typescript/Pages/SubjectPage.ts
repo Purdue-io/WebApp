@@ -26,7 +26,8 @@
 				});
 			},
 			action: () => {
-				
+				var dialog = new SubjectCourseSelectionDialog(this.getApp(), term, subject);
+				dialog.show();
 			}
 		};
 		this.tiles.addTile(coursesTile);

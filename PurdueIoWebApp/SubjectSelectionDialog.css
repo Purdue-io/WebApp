@@ -1,0 +1,33 @@
+﻿div.dialogContainer div.dialog ul.subjects {
+  list-style-type: none;
+  margin: 0;
+  padding: 16px;
+  text-align: center;
+}
+div.dialogContainer div.dialog ul.subjects li {
+  display: block;
+  text-align: left;
+  font-size: 26px;
+  padding: 8px 0;
+  cursor: pointer;
+  white-space: nowrap;
+}
+div.dialogContainer div.dialog ul.subjects li div.abbreviation {
+  display: inline-block;
+  width: 96px;
+  font-weight: 900;
+  color: #e3ae24;
+}
+div.dialogContainer div.dialog ul.subjects li span.name {
+  font-weight: 200;
+}
+@media (max-width: 768px) {
+  div.dialogContainer div.dialog ul.subjects li {
+    font-size: 20px;
+    padding: 6px;
+  }
+  div.dialogContainer div.dialog ul.subjects li div.abbreviation {
+    width: 72px;
+  }
+}
+/*# sourceMappingURL=SubjectSelectionDialog.css.map */

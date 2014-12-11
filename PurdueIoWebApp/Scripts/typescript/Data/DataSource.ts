@@ -74,6 +74,14 @@
 	}
 
 	/**
+	 * Fetches an array of courses in a particular subject and term
+	 * @return Promise, resolved with array of Courses or rejected on request failure
+	 */
+	public fetchTermSubjectCourses(term: Term, subject: Subject): Promise<Array<Course>> {
+		return JsonRequest.httpGet<Array<Course>>(DataSource.APIURL + "/odata/Courses/?$filter=(Classes/any(c:%20c/Term/TermId%20eq%20" + term.TermId + "))%20and%20Subject/SubjectId%20eq%20" + subject.SubjectId + "&$orderby=Number%20asc");
+	}
+
+	/**
 	 * Fetches a count of instructors in a particular subject and term
 	 * @return Promise, resolved with number or rejected on request failure
 	 */

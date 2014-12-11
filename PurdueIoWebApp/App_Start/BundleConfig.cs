@@ -25,12 +25,14 @@ namespace PurdueIoWebApp
 				"~/Scripts/typescript/Data/JsonRequest.js",
 				"~/Scripts/typescript/Data/DataSource.js",
 				"~/Scripts/typescript/Models/Term.js",
-				"~/Scripts/typescript/Models/Subject.js");
+				"~/Scripts/typescript/Models/Subject.js",
+				"~/Scripts/typescript/Models/Course.js");
 
 			// TS Components
 			tsBundle.Include(
 				"~/Scripts/typescript/Components/Dialog.js",
 				"~/Scripts/typescript/Components/SubjectSelectionDialog.js",
+				"~/Scripts/typescript/Components/SubjectCourseSelectionDialog.js",
 				"~/Scripts/typescript/Components/GlobalProgressIndicator.js",
 				"~/Scripts/typescript/Components/DataTiles.js");
 

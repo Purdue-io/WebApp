@@ -156,6 +156,12 @@
     <Content Include="Content\css\Components\LandingPage.min.css">
       <DependentUpon>LandingPage.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\SubjectCourseSelectionDialog.css">
+      <DependentUpon>SubjectCourseSelectionDialog.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Components\SubjectCourseSelectionDialog.min.css">
+      <DependentUpon>SubjectCourseSelectionDialog.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\Components\SubjectSelectionDialog.css">
       <DependentUpon>SubjectSelectionDialog.less</DependentUpon>
     </Content>
@@ -213,6 +219,12 @@
     </Content>
     <Content Include="Scripts\es6-promise-2.0.1.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SubjectSelectionDialog.css">
+      <DependentUpon>SubjectSelectionDialog.less</DependentUpon>
+    </Content>
+    <Content Include="SubjectSelectionDialog.min.css">
+      <DependentUpon>SubjectSelectionDialog.css</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -265,6 +277,10 @@
     <Content Include="Content\css\Components\SubjectSelectionDialog.css.map">
       <DependentUpon>SubjectSelectionDialog.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\SubjectCourseSelectionDialog.less" />
+    <Content Include="Content\css\Components\SubjectCourseSelectionDialog.css.map">
+      <DependentUpon>SubjectCourseSelectionDialog.css</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />
     <Content Include="Views\App\Components\DataTiles.cshtml" />
@@ -272,6 +288,10 @@
     <Content Include="Views\App\Components\Dialog.cshtml" />
     <Content Include="Views\App\Components\Pages\TermSelectPage.cshtml" />
     <Content Include="Views\App\Components\Pages\SubjectPage.cshtml" />
+    <Content Include="SubjectSelectionDialog.less" />
+    <Content Include="SubjectSelectionDialog.css.map">
+      <DependentUpon>SubjectSelectionDialog.css</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\definitions\es6-promise.d.ts" />
@@ -281,9 +301,11 @@
     <TypeScriptCompile Include="Scripts\typescript\Components\DataTiles.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\Dialog.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\GlobalProgressIndicator.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Components\SubjectCourseSelectionDialog.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\SubjectSelectionDialog.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\DataSource.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\JsonRequest.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\Course.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Subject.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Term.ts" />
     <TypeScriptCompile Include="Scripts\typescript\DEBUG.ts" />

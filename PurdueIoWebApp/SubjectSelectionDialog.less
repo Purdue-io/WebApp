@@ -1,0 +1,40 @@
+﻿@import "../Constants.less";
+
+div.dialogContainer {
+	div.dialog {
+		ul.subjects {
+			list-style-type:none;
+			margin:0;
+			padding:16px;
+			text-align:center; 
+
+			li {
+				display:block;
+				text-align: left;
+				font-size:26px;
+				padding:8px 0;
+				cursor: pointer;
+				white-space:nowrap;
+
+				div.abbreviation {
+					display:inline-block;
+					width:96px;
+					font-weight:900;
+					color:@accent-color;
+				}
+				span.name {
+					font-weight:200;
+				}
+
+				@media (max-width: @mobile-width) {
+					font-size:20px;
+					padding:6px;
+
+					div.abbreviation {
+						width:72px;
+					}
+				}
+			}
+		}
+	}
+}
