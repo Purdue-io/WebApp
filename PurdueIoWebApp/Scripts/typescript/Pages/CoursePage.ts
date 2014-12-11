@@ -137,10 +137,15 @@
 					if (sectionsByType[j][k].Meetings[0].DaysOfWeek.indexOf("Sunday") >= 0) days.push("U");
 					var daysString = days.join(" ");
 
+					var timeOptions = {
+						hour: 'numeric', minute: 'numeric',
+						timeZoneName: 'short'
+					};
+
 					sectionTableHtml += '<tr><td>' + instructorList + '</td>' +
 					'<td>' + sectionsByType[j][k].Meetings[0].Room.Building.ShortCode + '/' + sectionsByType[j][k].Meetings[0].Room.Number + '</td>' +
 					'<td>' + daysString + '</td>' +
-					'<td>' + startTime.getHours() + ':' + ('0' + startTime.getMinutes()).slice(-2) + '</td>' +
+					'<td>' + startTime.toLocaleString(navigator.language, { hour: '2-digit', minute: '2-digit' }) + '</td>' +
 						'</tr>';
 				}
 			}

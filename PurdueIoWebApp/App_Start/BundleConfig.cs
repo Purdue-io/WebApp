@@ -18,6 +18,7 @@ namespace PurdueIoWebApp
 				"~/Scripts/typescript/Component.js",
 				"~/Scripts/typescript/Animator.js",
 				"~/Scripts/typescript/Page.js",
+				"~/Scripts/typescript/Utility.js",
 				"~/Scripts/typescript/App.js");
 
 			// TS Data

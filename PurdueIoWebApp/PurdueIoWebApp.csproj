@@ -332,6 +332,7 @@
     <TypeScriptCompile Include="Scripts\typescript\Pages\LandingPage.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\SubjectPage.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\TermSelectPage.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Utility.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
