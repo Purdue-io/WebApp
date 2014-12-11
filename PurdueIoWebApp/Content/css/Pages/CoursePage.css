@@ -1,0 +1,39 @@
+﻿/* Common useful Functions */
+/* Animations */
+div.page.coursePage ul.classes {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+div.page.coursePage ul.classes div.title {
+  font-weight: 200;
+  font-size: 32px;
+}
+div.page.coursePage ul.classes li {
+  display: inline-block;
+  width: 100%;
+  max-width: 448px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 4px;
+  padding: 4px 12px;
+  background-color: #1a1a1a;
+  border-left: 5px solid #e3ae24;
+}
+div.page.coursePage ul.classes li.full {
+  border-color: #4d4d4d;
+}
+div.page.coursePage ul.classes li table.sections tr {
+  font-size: 14px;
+}
+div.page.coursePage ul.classes li table.sections tr th {
+  font-size: 16px;
+  text-align: left;
+  padding-top: 8px;
+}
+div.page.coursePage ul.classes li table.sections tr td {
+  padding: 2px 6px;
+}
+/*# sourceMappingURL=CoursePage.css.map */

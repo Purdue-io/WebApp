@@ -88,6 +88,14 @@
 	public fetchTermSubjectInstructorsCount(term: Term, subject: Subject): Promise<number> {
 		return JsonRequest.httpGet<number>(DataSource.APIURL + "/odata/Instructors/$count/?$filter=(Meetings/any(m:%20m/Section/Class/Course/Subject/SubjectId%20eq%20" + subject.SubjectId + "%20and%20m/Section/Class/Term/TermId%20eq%20" + term.TermId + "))");
 	}
+
+	/**
+	 * Fetches details on a particular course (all navigational properties expanded)
+	 * @return Promise, resolved with CourseDetails or rejected on request failure
+	 */
+	public fetchCourseDetails(course: Course): Promise<CourseDetails> {
+		return JsonRequest.httpGet<CourseDetails>(DataSource.APIURL + "/odata/Courses(" + course.CourseId + ")?$expand=Subject,Classes($expand=Term,Sections($expand=Meetings($expand=Instructors,Room($expand=Building))))");
+	}
 }
 
 // Defining a default API url here - this can be overridden by Debug.ts

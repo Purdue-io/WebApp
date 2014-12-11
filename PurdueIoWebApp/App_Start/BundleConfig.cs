@@ -26,7 +26,14 @@ namespace PurdueIoWebApp
 				"~/Scripts/typescript/Data/DataSource.js",
 				"~/Scripts/typescript/Models/Term.js",
 				"~/Scripts/typescript/Models/Subject.js",
-				"~/Scripts/typescript/Models/Course.js");
+				"~/Scripts/typescript/Models/Course.js",
+				"~/Scripts/typescript/Models/CourseDetails.js",
+				"~/Scripts/typescript/Models/ClassDetails.js",
+				"~/Scripts/typescript/Models/SectionDetails.js",
+				"~/Scripts/typescript/Models/MeetingDetails.js",
+				"~/Scripts/typescript/Models/Instructor.js",
+				"~/Scripts/typescript/Models/RoomDetails.js",
+				"~/Scripts/typescript/Models/Building.js");
 
 			// TS Components
 			tsBundle.Include(
@@ -40,7 +47,8 @@ namespace PurdueIoWebApp
 			tsBundle.Include(
 				"~/Scripts/typescript/Pages/TermSelectPage.js",
 				"~/Scripts/typescript/Pages/LandingPage.js",
-				"~/Scripts/typescript/Pages/SubjectPage.js");
+				"~/Scripts/typescript/Pages/SubjectPage.js",
+				"~/Scripts/typescript/Pages/CoursePage.js");
 
 #if DEBUG
 			// Include debug JS if we're in debug mode (sets debug API URL, etc)

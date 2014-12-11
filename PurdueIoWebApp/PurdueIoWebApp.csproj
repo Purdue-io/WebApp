@@ -150,10 +150,16 @@
     <Content Include="Content\css\Components\GlobalProgressIndicator.min.css">
       <DependentUpon>GlobalProgressIndicator.css</DependentUpon>
     </Content>
-    <Content Include="Content\css\Components\LandingPage.css">
+    <Content Include="Content\css\Pages\CoursePage.css">
+      <DependentUpon>CoursePage.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Pages\CoursePage.min.css">
+      <DependentUpon>CoursePage.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Pages\LandingPage.css">
       <DependentUpon>LandingPage.less</DependentUpon>
     </Content>
-    <Content Include="Content\css\Components\LandingPage.min.css">
+    <Content Include="Content\css\Pages\LandingPage.min.css">
       <DependentUpon>LandingPage.css</DependentUpon>
     </Content>
     <Content Include="Content\css\Components\SubjectCourseSelectionDialog.css">
@@ -168,10 +174,10 @@
     <Content Include="Content\css\Components\SubjectSelectionDialog.min.css">
       <DependentUpon>SubjectSelectionDialog.css</DependentUpon>
     </Content>
-    <Content Include="Content\css\Components\TermSelectPage.css">
+    <Content Include="Content\css\Pages\TermSelectPage.css">
       <DependentUpon>TermSelectPage.less</DependentUpon>
     </Content>
-    <Content Include="Content\css\Components\TermSelectPage.min.css">
+    <Content Include="Content\css\Pages\TermSelectPage.min.css">
       <DependentUpon>TermSelectPage.css</DependentUpon>
     </Content>
     <Content Include="Content\css\Fonts.css">
@@ -257,16 +263,16 @@
     <Content Include="Content\css\Components\GlobalProgressIndicator.css.map">
       <DependentUpon>GlobalProgressIndicator.css</DependentUpon>
     </Content>
-    <Content Include="Content\css\Components\TermSelectPage.less" />
-    <Content Include="Content\css\Components\TermSelectPage.css.map">
+    <Content Include="Content\css\Pages\TermSelectPage.less" />
+    <Content Include="Content\css\Pages\TermSelectPage.css.map">
       <DependentUpon>TermSelectPage.css</DependentUpon>
     </Content>
     <Content Include="Content\css\Animations.less" />
     <Content Include="Content\css\Animations.css.map">
       <DependentUpon>Animations.css</DependentUpon>
     </Content>
-    <Content Include="Content\css\Components\LandingPage.less" />
-    <Content Include="Content\css\Components\LandingPage.css.map">
+    <Content Include="Content\css\Pages\LandingPage.less" />
+    <Content Include="Content\css\Pages\LandingPage.css.map">
       <DependentUpon>LandingPage.css</DependentUpon>
     </Content>
     <Content Include="Content\css\Components\Dialog.less" />
@@ -281,6 +287,10 @@
     <Content Include="Content\css\Components\SubjectCourseSelectionDialog.css.map">
       <DependentUpon>SubjectCourseSelectionDialog.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Pages\CoursePage.less" />
+    <Content Include="Content\css\Pages\CoursePage.css.map">
+      <DependentUpon>CoursePage.css</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />
     <Content Include="Views\App\Components\DataTiles.cshtml" />
@@ -292,6 +302,7 @@
     <Content Include="SubjectSelectionDialog.css.map">
       <DependentUpon>SubjectSelectionDialog.css</DependentUpon>
     </Content>
+    <Content Include="Views\App\Components\Pages\CoursePage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\definitions\es6-promise.d.ts" />
@@ -305,11 +316,19 @@
     <TypeScriptCompile Include="Scripts\typescript\Components\SubjectSelectionDialog.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\DataSource.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\JsonRequest.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\Building.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\ClassDetails.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Course.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\CourseDetails.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\Instructor.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\MeetingDetails.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\RoomDetails.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\SectionDetails.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Subject.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Term.ts" />
     <TypeScriptCompile Include="Scripts\typescript\DEBUG.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Page.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Pages\CoursePage.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\LandingPage.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\SubjectPage.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Pages\TermSelectPage.ts" />

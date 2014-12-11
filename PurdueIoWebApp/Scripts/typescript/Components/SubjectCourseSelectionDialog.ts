@@ -28,7 +28,7 @@
 			subjList.appendChild(courseLi);
 			((course) => {
 				courseLi.addEventListener("click", () => {
-					//this.getApp().navigate(new SubjectPage(this.getApp(), this.term, course));
+					this.getApp().navigate(new CoursePage(this.getApp(), course));
 					this.hide();
 				});
 			})(course);
