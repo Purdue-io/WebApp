@@ -111,6 +111,11 @@ header ul li:not(:last-child) {
 header ul li:not(:last-child):hover {
   opacity: 0.8;
 }
+@media (max-width: 768px) {
+  header ul li:not(:last-child) {
+    display: none;
+  }
+}
 header ul li:not(:last-child):after {
   content: "\00a0/\00a0";
 }
