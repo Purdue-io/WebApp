@@ -1,16 +1,8 @@
 ﻿@import "../Constants.less";
 @import "../Functions.less";
 
-input[type=search] {
-	.box-sizing(border-box);
-	width:300px;
-	font-size:24px;
-	font-weight:200;
-	margin:16px 4px 4px 4px;
-}
-
-div.landingPage {
-	ul.subjects {
+div.subjectPage {
+	ul.courses {
 		display:block;
 		list-style-type:none;
 		margin:0;
@@ -45,6 +37,7 @@ div.landingPage {
 				margin:8px;
 				font-weight:300;
 				opacity:0.6;
+				max-height:80px;
 			}
 
 			@media (max-width: @mobile-width) {

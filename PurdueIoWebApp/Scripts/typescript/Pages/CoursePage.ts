@@ -123,8 +123,14 @@
 						instructorList = "TBA";
 					}
 
-					// Convert start time to Date object
+					// Convert start time to Date object, then string
 					var startTime = new Date(sectionsByType[j][k].Meetings[0].StartTime);
+					var startTimeStr;
+					if (Utility.IsDate(startTime) && startTime.getFullYear() > 0) {
+						startTimeStr = startTime.toLocaleString(navigator.language, { hour: '2-digit', minute: '2-digit' });
+					} else {
+						startTimeStr = "";
+					}
 
 					// Figure out days of the week ...
 					var days: Array<string> = new Array<string>();
@@ -145,7 +151,7 @@
 					sectionTableHtml += '<tr><td>' + instructorList + '</td>' +
 					'<td>' + sectionsByType[j][k].Meetings[0].Room.Building.ShortCode + '/' + sectionsByType[j][k].Meetings[0].Room.Number + '</td>' +
 					'<td>' + daysString + '</td>' +
-					'<td>' + startTime.toLocaleString(navigator.language, { hour: '2-digit', minute: '2-digit' }) + '</td>' +
+					'<td>' + startTimeStr + '</td>' +
 						'</tr>';
 				}
 			}

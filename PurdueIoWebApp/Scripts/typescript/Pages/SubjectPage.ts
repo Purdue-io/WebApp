@@ -1,6 +1,7 @@
 ﻿class SubjectPage extends Page {
 	public term: Term;
 	public subject: Subject;
+	public courses: Array<Course>;
 	public tiles: DataTiles;
 	constructor(app: App, term: Term, subject: Subject) {
 		this.term = term;
@@ -10,9 +11,20 @@
 		super(app);
 		(<HTMLElement>this.element.querySelector("h1")).innerText = subject.Name;
 
+		// Fetch courses!
+		this.getApp().progressIndicator.pushWork();
+		this.getApp().dataSource.fetchTermSubjectCourses(term, subject).then((courses) => {
+			this.courses = courses;
+			this.getApp().progressIndicator.popWork();
+			this.processCourses();
+		}, (error) => {
+			alert("Error fetching courses: " + error);
+			this.getApp().progressIndicator.popWork();
+		});
+
 		// Prepare tiles
 		this.tiles = new DataTiles(this.getApp());
-		this.tiles.parentElement = this.element;
+		this.tiles.parentElement = <HTMLElement>this.element.querySelector("div.tiles");
 
 		// Subject count tile
 		var coursesTile: DataTileDefinition = {
@@ -26,8 +38,7 @@
 				});
 			},
 			action: () => {
-				var dialog = new SubjectCourseSelectionDialog(this.getApp(), term, subject);
-				dialog.show();
+				
 			}
 		};
 		this.tiles.addTile(coursesTile);
@@ -49,6 +60,21 @@
 		};
 		this.tiles.addTile(instructorsTile);
 		
+	}
+
+	public processCourses(): void {
+		var coursesUlElement = <HTMLElement>this.element.querySelector("ul.courses");
+		for (var i = 0; i < this.courses.length; i++) {
+			var courseLiElement = document.createElement("li");
+			courseLiElement.innerHTML = '<div class="abbreviation">' + this.courses[i].Number + '</div><div class="name">' + this.courses[i].Title + '</div>';
+			((course) => {
+				courseLiElement.addEventListener("click", () => {
+					this.getApp().navigate(new CoursePage(this.getApp(), course));
+					this.hide();
+				});
+			})(this.courses[i]);
+			coursesUlElement.appendChild(courseLiElement);
+		}
 	}
 
 	public show(): void {

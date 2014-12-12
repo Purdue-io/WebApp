@@ -45,8 +45,7 @@ class LandingPage extends Page {
 				});
 			},
 			action: () => {
-				var dialog = new SubjectSelectionDialog(this.getApp(), term);
-				dialog.show();
+
 			}
 		};
 		this.tiles.addTile(subjectsTile);

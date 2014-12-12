@@ -1,0 +1,50 @@
+﻿/* Common useful Functions */
+/* Animations */
+div.subjectPage ul.courses {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+div.subjectPage ul.courses li {
+  position: relative;
+  display: block;
+  float: left;
+  width: 144px;
+  height: 144px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 4px;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+div.subjectPage ul.courses li div.abbreviation {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-weight: 200;
+  font-size: 36px;
+  color: #e3ae24;
+}
+div.subjectPage ul.courses li div.name {
+  position: absolute;
+  bottom: 0;
+  margin: 8px;
+  font-weight: 300;
+  opacity: 0.6;
+  max-height: 80px;
+}
+@media (max-width: 768px) {
+  div.subjectPage ul.courses li {
+    width: 128px;
+    height: 128px;
+  }
+}
+/*# sourceMappingURL=SubjectPage.css.map */

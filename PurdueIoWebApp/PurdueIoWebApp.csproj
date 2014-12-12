@@ -174,6 +174,12 @@
     <Content Include="Content\css\Components\SubjectSelectionDialog.min.css">
       <DependentUpon>SubjectSelectionDialog.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Pages\SubjectPage.css">
+      <DependentUpon>SubjectPage.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Pages\SubjectPage.min.css">
+      <DependentUpon>SubjectPage.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\Pages\TermSelectPage.css">
       <DependentUpon>TermSelectPage.less</DependentUpon>
     </Content>
@@ -290,6 +296,10 @@
     <Content Include="Content\css\Pages\CoursePage.less" />
     <Content Include="Content\css\Pages\CoursePage.css.map">
       <DependentUpon>CoursePage.css</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Pages\SubjectPage.less" />
+    <Content Include="Content\css\Pages\SubjectPage.css.map">
+      <DependentUpon>SubjectPage.css</DependentUpon>
     </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />
