@@ -1,7 +1,7 @@
 ﻿class DataSource {
 	public static APIURL: string;
-	private username: string;
-	private password: string;
+	public username: string;
+	public password: string;
 	
 	constructor() {
 
@@ -9,12 +9,18 @@
 
 	/**
 	 * Authenticate to myPurdue and set credentials for future requests
-	 * 
-	 * @return Promise, resolved with boolean T success, F bad credentials. Rejected on request failure.
+	 * @return Promise, resolved with boolean T success. Rejected on request failure.
 	 */
-	public authenticate(username: string, password: string): Promise<boolean> {
-		// TODO: Verify authentication
-		return null;
+	public authenticate(username: string, password: string): Promise<string> {
+		return new Promise<string>((resolve: (result: string) => void, reject: () => void) => {
+			JsonRequest.httpGet<string>(DataSource.APIURL + '/Students/Authenticate', username, password).then((success) => {
+				this.username = username;
+				this.password = password;
+				resolve("Authenticated");
+			}, (error) => {
+				reject();
+			});
+		});
 	}
 
 	/**

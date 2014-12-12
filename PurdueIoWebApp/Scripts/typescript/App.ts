@@ -10,6 +10,7 @@ class App {
 	public navElement: HTMLElement; // DOM element to display backstack
 	public pageStack: Array<Page> = new Array<Page>(); // Keeps track of pages for back stack.
 	public progressIndicator: GlobalProgressIndicator; 
+	public userBar: UserBar;
 
 	constructor() {
 		// Update singleton static reference
@@ -27,6 +28,9 @@ class App {
 		// Instantiate core components
 		this.progressIndicator = new GlobalProgressIndicator(this);
 
+		this.userBar = new UserBar(this);
+		this.userBar.parentElement = <HTMLElement>document.querySelector("div.userSideBar");
+
 		// Initialize back stack
 		this.pageStack = new Array<Page>();
 	}
@@ -37,6 +41,7 @@ class App {
 	public start() {
 		// Show core components
 		this.progressIndicator.show();
+		this.userBar.show();
 
 		// Add a term select page to our back-stack
 		this.navigate(new TermSelectPage(this), true);

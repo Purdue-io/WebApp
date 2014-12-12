@@ -39,6 +39,8 @@ namespace PurdueIoWebApp
 			// TS Components
 			tsBundle.Include(
 				"~/Scripts/typescript/Components/Dialog.js",
+				"~/Scripts/typescript/Components/UserBar.js",
+				"~/Scripts/typescript/Components/LogInDialog.js",
 				"~/Scripts/typescript/Components/SubjectSelectionDialog.js",
 				"~/Scripts/typescript/Components/SubjectCourseSelectionDialog.js",
 				"~/Scripts/typescript/Components/GlobalProgressIndicator.js",

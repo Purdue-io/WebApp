@@ -548,6 +548,18 @@ div.globalProgressIndicator.closed {
   -o-transition: top 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: top 400ms cubic-bezier(0.165, 0.84, 0.44, 1), opacity 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+div.userBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  overflow-y: auto;
+}
+div.userBar h1 a {
+  color: #e3ae24;
+}
 ul.dataTiles {
   display: block;
   padding: 0;
@@ -649,6 +661,7 @@ div.dialogContainer div.dialog ul.actions {
 }
 div.dialogContainer div.dialog ul.actions li {
   display: inline-block;
+  margin: 0 12px;
 }
 div.dialogContainer div.dialog ul.actions li a {
   cursor: pointer;

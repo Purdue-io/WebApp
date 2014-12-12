@@ -150,6 +150,12 @@
     <Content Include="Content\css\Components\GlobalProgressIndicator.min.css">
       <DependentUpon>GlobalProgressIndicator.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\UserBar.css">
+      <DependentUpon>UserBar.less</DependentUpon>
+    </Content>
+    <Content Include="Content\css\Components\UserBar.min.css">
+      <DependentUpon>UserBar.css</DependentUpon>
+    </Content>
     <Content Include="Content\css\Pages\CoursePage.css">
       <DependentUpon>CoursePage.less</DependentUpon>
     </Content>
@@ -301,6 +307,10 @@
     <Content Include="Content\css\Pages\SubjectPage.css.map">
       <DependentUpon>SubjectPage.css</DependentUpon>
     </Content>
+    <Content Include="Content\css\Components\UserBar.less" />
+    <Content Include="Content\css\Components\UserBar.css.map">
+      <DependentUpon>UserBar.css</DependentUpon>
+    </Content>
     <None Include="Project_Readme.html" />
     <Content Include="Views\App\Components\Pages\LandingPage.cshtml" />
     <Content Include="Views\App\Components\DataTiles.cshtml" />
@@ -313,6 +323,7 @@
       <DependentUpon>SubjectSelectionDialog.css</DependentUpon>
     </Content>
     <Content Include="Views\App\Components\Pages\CoursePage.cshtml" />
+    <Content Include="Views\App\Components\UserBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\definitions\es6-promise.d.ts" />
@@ -323,7 +334,9 @@
     <TypeScriptCompile Include="Scripts\typescript\Components\Dialog.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\GlobalProgressIndicator.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\SubjectCourseSelectionDialog.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Components\LogInDialog.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Components\SubjectSelectionDialog.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Components\UserBar.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\DataSource.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\JsonRequest.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Building.ts" />

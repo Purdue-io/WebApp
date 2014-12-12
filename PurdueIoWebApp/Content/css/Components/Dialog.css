@@ -51,6 +51,7 @@ div.dialogContainer div.dialog ul.actions {
 }
 div.dialogContainer div.dialog ul.actions li {
   display: inline-block;
+  margin: 0 12px;
 }
 div.dialogContainer div.dialog ul.actions li a {
   cursor: pointer;

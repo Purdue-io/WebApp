@@ -17,7 +17,7 @@ class JsonRequest {
 	 * @param httpMethod HTTP method used in request
 	 * @param postData POST data to send, if the method used is post
 	 */
-	private static httpRequest<T>(url: string, method: httpMethod, postData?: any): Promise<T> {
+	private static httpRequest<T>(url: string, method: httpMethod, postData?: any, username?: string, password?: string): Promise<T> {
 		// I promise I'll do this. Pinky swear.
 		return new Promise<T>((resolve, reject) => {
 			var req = new XMLHttpRequest();
@@ -28,6 +28,10 @@ class JsonRequest {
 				case httpMethod.POST:
 					req.open('POST', url);
 					break;
+			}
+
+			if (typeof username !== 'undefined' && typeof password !== 'undefined') {
+				req.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
 			}
 
 			req.onload = function () {
@@ -73,8 +77,8 @@ class JsonRequest {
 	 * 
 	 * @param url URL to request
 	 */
-	public static httpGet<T>(url: string): Promise<T> {
-		return JsonRequest.httpRequest<T>(url, httpMethod.GET);
+	public static httpGet<T>(url: string, username?: string, password?: string): Promise<T> {
+		return JsonRequest.httpRequest<T>(url, httpMethod.GET, null, username, password);
 	}
 
 	/**
@@ -83,7 +87,7 @@ class JsonRequest {
 	 * @param url URL to request
 	 * @param postData JSON post data to send
 	 */
-	public static httpPost<T>(url: string, postData: any): Promise<T> {
-		return JsonRequest.httpRequest<T>(url, httpMethod.POST, postData);
+	public static httpPost<T>(url: string, postData: any, username?: string, password?: string): Promise<T> {
+		return JsonRequest.httpRequest<T>(url, httpMethod.POST, postData, username, password);
 	}
 }

@@ -1,0 +1,13 @@
+﻿div.userBar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  overflow-y: auto;
+}
+div.userBar h1 a {
+  color: #e3ae24;
+}
+/*# sourceMappingURL=UserBar.css.map */
