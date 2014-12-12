@@ -98,11 +98,13 @@ body > div.content {
 	overflow:hidden;
 
 	div.userSideBar {
+		position:relative;
 		float:left;
 		width:288px;
 		height:100%;
 		.box-sizing(border-box);
 		padding:16px;
+		.transition(margin-left 250ms cubic-bezier(0.190, 1.000, 0.220, 1.000));
 
 		@media (max-width: @mobile-width) {
 			margin-left:-288px;
@@ -139,6 +141,7 @@ body > div.content {
 		.box-sizing(border-box);
 		padding:16px;
 		.perspective(inherit);
+		.transition(width 250ms cubic-bezier(0.190, 1.000, 0.220, 1.000));
 
 		@media (max-width: @mobile-width) {
 			width:100%;
