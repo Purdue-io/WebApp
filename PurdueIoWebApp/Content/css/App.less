@@ -17,12 +17,12 @@ h1 {
 	border-bottom:4px solid @accent-color;
 }
 
-input[type=text], input[type=search] {
+input[type=text], input[type=password], input[type=search] {
 	font-family:"Open Sans";
 	background-color:#dedede;
 	border:0;
 	padding:4px 8px;
-	transition: background-color ease-in-out 150ms;
+	.transition(background-color 150ms ease-in-out);
 
 	&:focus {
 		background-color:#fff;

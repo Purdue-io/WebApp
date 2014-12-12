@@ -74,4 +74,12 @@ div.dialogContainer div.dialog ul.actions li a {
     padding-top: 8px;
   }
 }
+div.dialogContainer div.dialog form {
+  text-align: center;
+  padding-top: 64px;
+}
+div.dialogContainer div.dialog form input {
+  font-size: 24px;
+  margin: 8px;
+}
 /*# sourceMappingURL=Dialog.css.map */

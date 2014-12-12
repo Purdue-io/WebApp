@@ -14,7 +14,7 @@
 		};
 		cancelAction.text = "Cancel";
 		super(app, "Log In", "", [cancelAction, logInAction]);
-		this.setContent('<form><input type="text" placeholder="User Name" /><input type="password" placeholder="Password" /></form>');
+		this.setContent('<form><input type="text" placeholder="User Name" /><br /><input type="password" placeholder="Password" /></form>');
 	}
 
 	public logIn(): void {

@@ -50,14 +50,19 @@ h1 {
   border-bottom: 4px solid #e3ae24;
 }
 input[type=text],
+input[type=password],
 input[type=search] {
   font-family: "Open Sans";
   background-color: #dedede;
   border: 0;
   padding: 4px 8px;
-  transition: background-color ease-in-out 150ms;
+  -webkit-transition: background-color 150ms ease-in-out;
+  -moz-transition: background-color 150ms ease-in-out;
+  -o-transition: background-color 150ms ease-in-out;
+  transition: background-color 150ms ease-in-out;
 }
 input[type=text]:focus,
+input[type=password]:focus,
 input[type=search]:focus {
   background-color: #fff;
 }
@@ -692,6 +697,14 @@ div.dialogContainer div.dialog ul.actions li a {
     height: 48px;
     padding-top: 8px;
   }
+}
+div.dialogContainer div.dialog form {
+  text-align: center;
+  padding-top: 64px;
+}
+div.dialogContainer div.dialog form input {
+  font-size: 24px;
+  margin: 8px;
 }
 div.dialogContainer div.dialog ul.subjects {
   list-style-type: none;
