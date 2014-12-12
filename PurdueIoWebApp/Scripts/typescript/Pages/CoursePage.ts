@@ -141,7 +141,7 @@
 					if (sectionsByType[j][k].Meetings[0].DaysOfWeek.indexOf("Friday") >= 0) days.push("F");
 					if (sectionsByType[j][k].Meetings[0].DaysOfWeek.indexOf("Saturday") >= 0) days.push("S");
 					if (sectionsByType[j][k].Meetings[0].DaysOfWeek.indexOf("Sunday") >= 0) days.push("U");
-					var daysString = days.join(" ");
+					var daysString = days.join("&nbsp;");
 
 					var timeOptions = {
 						hour: 'numeric', minute: 'numeric',
