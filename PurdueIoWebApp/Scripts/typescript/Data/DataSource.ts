@@ -99,4 +99,4 @@
 }
 
 // Defining a default API url here - this can be overridden by Debug.ts
-DataSource.APIURL = "http://api.purdue.io";
+DataSource.APIURL = "//api.purdue.io";

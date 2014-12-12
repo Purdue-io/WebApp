@@ -1,1 +1,1 @@
-﻿DataSource.APIURL = "http://api-dev.purdue.io";
+﻿DataSource.APIURL = "//api-dev.purdue.io";
