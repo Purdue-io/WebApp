@@ -92,6 +92,11 @@ class App {
 		if (this.pageStack.length > 0) {
 			this.pageStack[this.pageStack.length - 1].hide(); // Hide last page on stack
 		}
+
+		((index, title) => {
+			history.pushState({ pageIndex: index }, title);
+		})(this.pageStack.length, page.pageTitle);
+
 		this.pageStack.push(page);
 
 		// Add an element in the back-stack for this page
@@ -107,9 +112,26 @@ class App {
 			page.show(); // Show the new page
 		}
 	}
+
+	/**
+	 * Navigates back to a page in history, referred to by index
+	 */
+	public navigateBackToIndex(index: number): void {
+		if (index > this.pageStack.length - 1) {
+			return;
+		}
+		this.navigateBackTo(this.pageStack[index]);
+	}
 }
 
 window.onload = () => {
 	new App();
 	App.instance.start();
 };
+
+window.onpopstate = (ev) => {
+	if (typeof ev.state === 'undefined' || ev.state == null) {
+		return;
+	}
+	App.instance.navigateBackToIndex(ev.state.pageIndex);
+}
