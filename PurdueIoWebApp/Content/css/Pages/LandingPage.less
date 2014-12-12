@@ -1,4 +1,5 @@
-﻿@import "../Functions.less";
+﻿@import "../Constants.less";
+@import "../Functions.less";
 
 input[type=search] {
 	.box-sizing(border-box);
@@ -6,4 +7,51 @@ input[type=search] {
 	font-size:24px;
 	font-weight:200;
 	margin:16px 4px 4px 4px;
+}
+
+div.landingPage {
+
+	ul.subjects {
+		display:block;
+		list-style-type:none;
+		margin:0;
+		padding:0;
+
+		li {
+			position:relative;
+			display:block;
+			float:left;
+			width:144px;
+			height:144px;
+			.box-sizing(border-box);
+			margin:4px;
+			padding:0;
+			overflow:hidden;
+			background-color:lighten(#000,10%);
+			cursor:pointer;
+			.user-select(none);
+
+			div.abbreviation {
+				position:absolute;
+				top:8px;
+				left:8px;
+				font-weight:200;
+				font-size:36px;
+				color:@accent-color;
+			}
+
+			div.name {
+				position:absolute;
+				bottom:0;
+				margin:8px;
+				font-weight:300;
+				opacity:0.6;
+			}
+
+			@media (max-width: @mobile-width) {
+				width:128px;
+				height:128px;
+			}
+		}
+	}
 }

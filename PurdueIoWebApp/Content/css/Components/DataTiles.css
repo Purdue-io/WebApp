@@ -22,6 +22,7 @@ ul.dataTiles li {
   -ms-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  cursor: default;
 }
 ul.dataTiles li span {
   font-weight: 200;

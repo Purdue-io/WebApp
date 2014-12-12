@@ -4,6 +4,7 @@
  */
 class LandingPage extends Page {
 	public term: Term;
+	public subjects: Array<Subject>;
 
 	// Sub-components:
 	public tiles: DataTiles;
@@ -19,7 +20,18 @@ class LandingPage extends Page {
 
 		// Prepare the tiles!
 		this.tiles = new DataTiles(this.getApp());
-		this.tiles.parentElement = this.element;
+		this.tiles.parentElement = <HTMLElement>this.element.querySelector("div.tiles");
+
+		// Fetch subjects!
+		this.getApp().progressIndicator.pushWork();
+		this.getApp().dataSource.fetchTermSubjects(term).then((subjects) => {
+			this.subjects = subjects;
+			this.getApp().progressIndicator.popWork();
+			this.processSubjects();
+		}, (error) => {
+			alert("Error fetching subjects: " + error);
+			this.getApp().progressIndicator.popWork();
+		});
 
 		// Subject count tile
 		var subjectsTile: DataTileDefinition = {
@@ -74,6 +86,21 @@ class LandingPage extends Page {
 			}
 		};
 		this.tiles.addTile(percentTile);
+	}
+
+	public processSubjects(): void {
+		var subjectsUlElement = <HTMLElement>this.element.querySelector("ul.subjects");
+		for (var i = 0; i < this.subjects.length; i++) {
+			var subjectLiElement = document.createElement("li");
+			subjectLiElement.innerHTML = '<div class="abbreviation">' + this.subjects[i].Abbreviation + '</div><div class="name">' + this.subjects[i].Name + '</div>';
+			((subject) => {
+				subjectLiElement.addEventListener("click", () => {
+					this.getApp().navigate(new SubjectPage(this.getApp(), this.term, subject));
+					this.hide();
+				});
+			})(this.subjects[i]);
+			subjectsUlElement.appendChild(subjectLiElement);
+		}
 	}
 
 	public show(): void {
