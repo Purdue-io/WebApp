@@ -31,7 +31,7 @@ class DataTiles extends Component {
 		data.innerHTML = tile.data;
 		tileElement.appendChild(data);
 		var label = document.createElement("label");
-		label.innerText = tile.label;
+		label.innerHTML = tile.label;
 		tileElement.appendChild(label);
 		tileElement.addEventListener("click", tile.action);
 		tileElement = <HTMLElement>this.element.appendChild(tileElement);

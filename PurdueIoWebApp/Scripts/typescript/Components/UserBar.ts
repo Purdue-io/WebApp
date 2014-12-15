@@ -7,7 +7,7 @@
 	public show() {
 		if (typeof this.getApp().dataSource.username === 'undefined') {
 			var loginLink = document.createElement("a");
-			loginLink.innerText = "Log In";
+			loginLink.innerHTML = "Log In";
 			loginLink.addEventListener("click", () => {
 				(new LogInDialog(this.getApp())).show();
 			});

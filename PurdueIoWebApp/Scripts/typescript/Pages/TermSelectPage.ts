@@ -28,7 +28,7 @@
 		for (var i in terms) {
 			var term = terms[i];
 			var termEl = document.createElement("a");
-			termEl.innerText = term.Name;
+			termEl.innerHTML = term.Name;
 			((term) => {
 				termEl.addEventListener("click", () => {
 					this.getApp().selectedTerm = term;

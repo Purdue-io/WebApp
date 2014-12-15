@@ -8,7 +8,7 @@
 		this.componentId = "CoursePage";
 		this.pageTitle = course.Number;
 		super(app);
-		(<HTMLElement>this.element.querySelector("h1")).innerText = course.Title;
+		(<HTMLElement>this.element.querySelector("h1")).innerHTML = course.Title;
 
 		// Fetch course details
 		this.getApp().progressIndicator.pushWork();
@@ -82,7 +82,7 @@
 	}
 
 	public processCourseDetails(): void {
-		(<HTMLElement>this.element.querySelector("p.description")).innerText = this.courseDetails.Description;
+		(<HTMLElement>this.element.querySelector("p.description")).innerHTML = this.courseDetails.Description;
 		var courseUlElement = <HTMLElement>this.element.querySelector("ul.classes");
 		for (var i = 0; i < this.courseDetails.Classes.length; i++) {
 			// Prepare a list item for each class
@@ -90,7 +90,7 @@
 			var classLiElement = document.createElement("li");
 			var classTitleElement = document.createElement("div");
 			classTitleElement.classList.add("title");
-			classTitleElement.innerText = "Class " + (i + 1);
+			classTitleElement.innerHTML = "Class " + (i + 1);
 			classTitleElement = <HTMLDivElement>classLiElement.appendChild(classTitleElement);
 
 			// Create an array grouping sections by their type. 
@@ -162,7 +162,7 @@
 			if (sectionTypes.indexOf("Lecture") >= 0) {
 				if (sectionsByType[sectionTypes.indexOf("Lecture")][0].Meetings[0].Instructors.length > 0) {
 					var lecturer = sectionsByType[sectionTypes.indexOf("Lecture")][0].Meetings[0].Instructors[0].Name;
-					classTitleElement.innerText = lecturer;
+					classTitleElement.innerHTML = lecturer;
 				}
 			}
 
