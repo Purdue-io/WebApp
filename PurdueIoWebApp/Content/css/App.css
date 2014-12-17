@@ -163,6 +163,9 @@ body > div.content div.userSideBar h1 {
   border: none;
   margin: 0;
 }
+body > div.content div.userSideBar h1 a {
+  cursor: pointer;
+}
 body > div.content div.userSideBar h2 {
   font-family: "Open Sans";
   font-weight: 200;
