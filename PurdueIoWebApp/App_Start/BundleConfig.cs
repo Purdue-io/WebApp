@@ -60,8 +60,8 @@ namespace PurdueIoWebApp
 
 			bundles.Add(tsBundle);
 
-			bundles.Add(new StyleBundle("~/bundles/css").Include(
-					  "~/Content/css/App.css"));
+			bundles.Add(new StyleBundle("~/Content/bundles/css").Include(
+					  "~/Content/css/App.css", new CssRewriteUrlTransform()));
 
 #if DEBUG
 			BundleTable.EnableOptimizations = false;
