@@ -1,1 +1,1 @@
-﻿div.userBar{position:absolute;top:0;bottom:0;left:0;right:0;padding:16px;overflow-y:auto}div.userBar h1 a{color:#e3ae24}
+﻿div.userBar{position:absolute;top:0;bottom:0;left:0;right:0;padding:16px;overflow-y:auto}div.userBar h1 a{color:#e3ae24}div.userBar div.schedule ul{list-style-type:none;padding:0;margin:0}div.userBar div.schedule ul li{margin:8px;cursor:pointer}div.userBar div.schedule ul li div.abbreviation{width:100%;color:#e3ae24;font-size:18px}div.userBar div.schedule ul li div.title{width:100%;font-size:12px}

@@ -2,6 +2,7 @@
 	public static APIURL: string;
 	public username: string;
 	public password: string;
+	public enrolledSections: Array<SectionExpanded>;
 	
 	constructor() {
 
@@ -13,10 +14,42 @@
 	 */
 	public authenticate(username: string, password: string): Promise<string> {
 		return new Promise<string>((resolve: (result: string) => void, reject: () => void) => {
-			JsonRequest.httpGet<string>(DataSource.APIURL + '/Students/Authenticate', username, password).then((success) => {
+			JsonRequest.httpGet<string>(DataSource.APIURL + '/Student/Authenticate', username, password).then((success) => {
 				this.username = username;
 				this.password = password;
 				resolve("Authenticated");
+			}, (error) => {
+				reject();
+			});
+		});
+	}
+
+	/**
+	 * Fetches the sections a user is registered for, organized by term.
+	 * @return An object containing arrays of SectionDetail objects, keyed by term name.
+	 */
+	public fetchUserSchedule(): Promise<Array<SectionExpanded>> {
+		return new Promise<Array<SectionExpanded>>((resolve: (result) => void, reject: () => void) => {
+			JsonRequest.httpGet<{ [termName: string]: string[]; }>(DataSource.APIURL + "/Student/Schedule", this.username, this.password).then((success) => {
+				var guidList = "";
+				for (var term in success) {
+					var sectionGuids: string[] = success[term];
+					if (guidList.length > 0) {
+						guidList += "%20or%20";
+					}
+					for (var i = 0; i < sectionGuids.length; i++) {
+						if (i > 0) {
+							guidList += "%20or%20";
+						}
+						guidList += "SectionId%20eq%20" + sectionGuids[i];
+					}
+				}
+				JsonRequest.httpGet<Array<SectionExpanded>>(DataSource.APIURL + "/odata/Sections?$expand=Class($expand=Course($expand=Subject),Term),Meetings&$filter=" + guidList).then((success) => {
+					this.enrolledSections = success;
+					resolve(success);
+				}, (error) => {
+					reject();
+				});
 			}, (error) => {
 				reject();
 			});

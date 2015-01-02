@@ -24,7 +24,14 @@ div.page.coursePage {
 			border-left:5px solid @accent-color;
 
 			&.full {
-				border-color: lighten(#000,30%);
+				//border-color: lighten(#000,30%);
+				border-color:@error-color;
+				opacity:0.5;
+			}
+
+			&.enrolled {
+				border-color:@success-color;
+				opacity:1.0;
 			}
 
 			table.sections {

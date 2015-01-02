@@ -112,10 +112,19 @@
 			var sectionTable = document.createElement("table");
 			sectionTable.classList.add("sections");
 			var sectionTableHtml = "";
+			// keep track of if all sections are full
+			var sectionsFilled = true;
 			for (var j = 0; j < sectionTypes.length; j++) {
 				sectionTableHtml += '<tr><th colspan="3">' + sectionTypes[j] + '</th></tr>';
 				for (var k = 0; k < sectionsByType[j].length; k++) {
-
+					if (sectionsByType[j][k].Enrolled < sectionsByType[j][k].Capacity) {
+						sectionsFilled = false;
+					}
+					if (this.getApp().dataSource.enrolledSections != null && this.getApp().dataSource.enrolledSections.some((value, index, array) => {
+						return value.SectionId == sectionsByType[j][k].SectionId;
+					})) {
+						classLiElement.classList.add("enrolled");
+					}
 					var instructorList = sectionsByType[j][k].Meetings[0].Instructors.map((val, index, array) => {
 						return val.Name;
 					}).join(', ');
@@ -156,6 +165,10 @@
 				}
 			}
 			sectionTable.innerHTML = sectionTableHtml;
+
+			if (sectionsFilled) {
+				classLiElement.classList.add("full");
+			}
 			classLiElement.appendChild(sectionTable);
 
 			// If this class has a lecture section, let's name it after the lecturer

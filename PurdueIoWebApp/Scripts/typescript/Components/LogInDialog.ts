@@ -27,6 +27,7 @@
 		this.getApp().progressIndicator.pushWork();
 		this.getApp().dataSource.authenticate(username, password).then((success) => {
 			this.hide();
+			this.getApp().userBar.loadUserData();
 			this.getApp().progressIndicator.popWork();
 		}, () => {
 			alert("Error authenticating!");

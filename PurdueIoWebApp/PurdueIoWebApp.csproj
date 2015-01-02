@@ -340,13 +340,16 @@
     <TypeScriptCompile Include="Scripts\typescript\Data\DataSource.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\JsonRequest.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Building.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\ClassExpanded.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\ClassDetails.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\CourseExpanded.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Course.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\CourseDetails.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Instructor.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\MeetingDetails.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\RoomDetails.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\SectionDetails.ts" />
+    <TypeScriptCompile Include="Scripts\typescript\Data\Models\SectionExpanded.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Subject.ts" />
     <TypeScriptCompile Include="Scripts\typescript\Data\Models\Term.ts" />
     <TypeScriptCompile Include="Scripts\typescript\DEBUG.ts" />
