@@ -651,7 +651,7 @@ div.dialogContainer {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
 }
 div.dialogContainer div.dialog {
@@ -673,6 +673,7 @@ div.dialogContainer div.dialog header {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding-top: 32px;
+  padding-left: 16px;
 }
 div.dialogContainer div.dialog div.content {
   height: calc(100% - 224px);
@@ -696,7 +697,7 @@ div.dialogContainer div.dialog ul.actions {
 }
 div.dialogContainer div.dialog ul.actions li {
   display: inline-block;
-  margin: 0 12px;
+  margin: 0 16px;
 }
 div.dialogContainer div.dialog ul.actions li a {
   cursor: pointer;

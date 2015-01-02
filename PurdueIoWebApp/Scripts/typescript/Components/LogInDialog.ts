@@ -14,7 +14,16 @@
 		};
 		cancelAction.text = "Cancel";
 		super(app, "Log In", "", [cancelAction, logInAction]);
-		this.setContent('<form><input type="text" placeholder="User Name" /><br /><input type="password" placeholder="Password" /></form>');
+		this.setContent('<form><input type="text" placeholder="User Name" /><br /><input type="password" placeholder="Password" /><br /><input type="submit" style="opacity:0;height:0;width:0;" tabindex="-1" /></form>');
+	}
+
+	public show(): void {
+		super.show();
+		(<HTMLElement>this.element.querySelector("form")).addEventListener("submit", (ev) => {
+			ev.preventDefault();
+			this.logIn();
+		});
+		(<HTMLInputElement>this.element.querySelector("form input")).focus();
 	}
 
 	public logIn(): void {

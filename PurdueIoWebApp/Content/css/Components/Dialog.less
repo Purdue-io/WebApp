@@ -7,7 +7,7 @@ div.dialogContainer {
 	bottom:0;
 	left:0;
 	right:0;
-	background-color:#000;
+	background-color:rgba(0,0,0,0.8);
 	opacity:1;
 
 	div.dialog {
@@ -27,6 +27,7 @@ div.dialogContainer {
 			text-transform:lowercase;
 			.box-sizing(border-box);
 			padding-top:32px;
+			padding-left:16px;
 		}
 		div.content {
 			height:calc(~"100% - 224px");
@@ -47,7 +48,7 @@ div.dialogContainer {
 			padding-top:24px;
 			li {
 				display:inline-block;
-				margin:0 12px;
+				margin:0 16px;
 				a {
 					cursor: pointer;
 					color:@accent-color;
