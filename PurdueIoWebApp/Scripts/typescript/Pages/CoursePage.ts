@@ -136,7 +136,7 @@
 					var startTime = new Date(sectionsByType[j][k].Meetings[0].StartTime);
 					var startTimeStr;
 					if (Utility.IsDate(startTime) && startTime.getFullYear() > 0) {
-						startTimeStr = startTime.toLocaleString(navigator.language, { hour: '2-digit', minute: '2-digit' });
+						startTimeStr = startTime.toLocaleString(navigator.language, { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' });
 					} else {
 						startTimeStr = "";
 					}
@@ -157,7 +157,12 @@
 						timeZoneName: 'short'
 					};
 
-					sectionTableHtml += '<tr><td>' + instructorList + '</td>' +
+					var classList = new Array<string>();
+					if (sectionsByType[j][k].RemainingSpace == 0) {
+						classList.push("full");
+					}
+
+					sectionTableHtml += '<tr class="' + classList.join(" ") + '"><td>' + instructorList + '</td>' +
 					'<td>' + sectionsByType[j][k].Meetings[0].Room.Building.ShortCode + '/' + sectionsByType[j][k].Meetings[0].Room.Number + '</td>' +
 					'<td>' + daysString + '</td>' +
 					'<td>' + startTimeStr + '</td>' +

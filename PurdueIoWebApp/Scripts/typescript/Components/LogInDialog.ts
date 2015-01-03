@@ -14,7 +14,11 @@
 		};
 		cancelAction.text = "Cancel";
 		super(app, "Log In", "", [cancelAction, logInAction]);
-		this.setContent('<form><input type="text" placeholder="User Name" /><br /><input type="password" placeholder="Password" /><br /><input type="submit" style="opacity:0;height:0;width:0;" tabindex="-1" /></form>');
+		this.setContent('<h2>Disclaimer</h2><p>Purdue.io and its API do not store your credentials for any amount of time. '
+			+ 'Your credentials are only stored in your browser for your current session, and are cleared when you close this site. '
+			+ 'Credentials are only used for fetching class schedule, adding, and dropping class sections. '
+			+ 'Purdue.io will not use your credentials for any other purpose. By logging in, you accept that you use this system at your own risk. '
+			+ '</p><form><input type="text" placeholder="User Name" /><br /><input type="password" placeholder="Password" /><br /><input type="submit" style="opacity:0;height:0;width:0;" tabindex="-1" /></form>');
 	}
 
 	public show(): void {

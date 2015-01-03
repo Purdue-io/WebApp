@@ -677,6 +677,7 @@ div.dialogContainer div.dialog header {
 }
 div.dialogContainer div.dialog div.content {
   height: calc(100% - 224px);
+  padding: 0 8px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -722,7 +723,7 @@ div.dialogContainer div.dialog ul.actions li a {
 }
 div.dialogContainer div.dialog form {
   text-align: center;
-  padding-top: 64px;
+  padding-top: 32px;
 }
 div.dialogContainer div.dialog form input {
   font-size: 24px;
@@ -927,6 +928,7 @@ div.page.coursePage ul.classes div.title {
 }
 div.page.coursePage ul.classes li {
   display: inline-block;
+  position: relative;
   width: 100%;
   max-width: 448px;
   -moz-box-sizing: border-box;
@@ -940,6 +942,23 @@ div.page.coursePage ul.classes li {
 div.page.coursePage ul.classes li.full {
   border-color: #a80000;
   opacity: 0.5;
+}
+div.page.coursePage ul.classes li.full::after {
+  content: 'Full';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 42px;
+  line-height: 1;
+  opacity: 0.1;
+  cursor: default;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 div.page.coursePage ul.classes li.enrolled {
   border-color: #16a800;
@@ -955,5 +974,8 @@ div.page.coursePage ul.classes li table.sections tr th {
 }
 div.page.coursePage ul.classes li table.sections tr td {
   padding: 2px 6px;
+}
+div.page.coursePage ul.classes li table.sections tr.full {
+  opacity: 0.25;
 }
 /*# sourceMappingURL=App.css.map */

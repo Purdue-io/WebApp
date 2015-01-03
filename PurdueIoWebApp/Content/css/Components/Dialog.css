@@ -32,6 +32,7 @@ div.dialogContainer div.dialog header {
 }
 div.dialogContainer div.dialog div.content {
   height: calc(100% - 224px);
+  padding: 0 8px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -77,7 +78,7 @@ div.dialogContainer div.dialog ul.actions li a {
 }
 div.dialogContainer div.dialog form {
   text-align: center;
-  padding-top: 64px;
+  padding-top: 32px;
 }
 div.dialogContainer div.dialog form input {
   font-size: 24px;

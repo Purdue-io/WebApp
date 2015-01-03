@@ -15,6 +15,7 @@ div.page.coursePage {
 
 		li {
 			display:inline-block;
+			position:relative;
 			width:100%;
 			max-width: 448px;
 			.box-sizing(border-box);
@@ -27,6 +28,21 @@ div.page.coursePage {
 				//border-color: lighten(#000,30%);
 				border-color:@error-color;
 				opacity:0.5;
+
+				&::after {
+					content:'Full';
+					position:absolute;
+					top:0;
+					right:0;
+					padding:8px;
+					font-weight:900;
+					text-transform:uppercase;
+					font-size:42px;
+					line-height:1;
+					opacity:0.1;
+					cursor:default;
+					.user-select(none);
+				}
 			}
 
 			&.enrolled {
@@ -44,6 +60,10 @@ div.page.coursePage {
 					}
 					td {
 						padding:2px 6px;
+					}
+
+					&.full {
+						opacity:0.25;
 					}
 				}
 			}
