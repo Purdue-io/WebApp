@@ -38,7 +38,7 @@
 				+ '<div class="title">' + success[i].Class.Course.Title + '</div>';
 				((element: HTMLElement, section: SectionExpanded) => {
 					element.addEventListener("click", () => {
-						this.getApp().navigate(new CoursePage(this.getApp(), <Course>(section.Class.Course)));
+						this.getApp().navigate(new CoursePage(this.getApp(), section.Class.Term, <Course>(section.Class.Course)));
 					});
 				})(listElement, success[i]);
 				scheduleListElement.appendChild(listElement);

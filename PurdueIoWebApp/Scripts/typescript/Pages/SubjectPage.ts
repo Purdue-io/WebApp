@@ -69,7 +69,7 @@
 			courseLiElement.innerHTML = '<div class="abbreviation">' + this.courses[i].Number + '</div><div class="name">' + this.courses[i].Title + '</div>';
 			((course) => {
 				courseLiElement.addEventListener("click", () => {
-					this.getApp().navigate(new CoursePage(this.getApp(), course));
+					this.getApp().navigate(new CoursePage(this.getApp(), this.term, course));
 					this.hide();
 				});
 			})(this.courses[i]);

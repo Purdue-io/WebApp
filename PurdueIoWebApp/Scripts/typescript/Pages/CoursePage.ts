@@ -1,10 +1,12 @@
 ﻿class CoursePage extends Page {
 	public course: Course;
+	public term: Term;
 	public courseDetails: CourseDetails;
 	public tiles: DataTiles;
 
-	constructor(app: App, course: Course) {
+	constructor(app: App, term: Term, course: Course) {
 		this.course = course;
+		this.term = term;
 		this.componentId = "CoursePage";
 		this.pageTitle = course.Number;
 		super(app);
@@ -12,7 +14,7 @@
 
 		// Fetch course details
 		this.getApp().progressIndicator.pushWork();
-		var courseDetailsPromise = this.getApp().dataSource.fetchCourseDetails(course).then((courseDetails) => {
+		var courseDetailsPromise = this.getApp().dataSource.fetchTermCourseDetails(term, course).then((courseDetails) => {
 			this.courseDetails = courseDetails;
 			this.getApp().progressIndicator.popWork();
 			this.processCourseDetails();

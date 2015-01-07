@@ -132,8 +132,19 @@
 	 * Fetches details on a particular course (all navigational properties expanded)
 	 * @return Promise, resolved with CourseDetails or rejected on request failure
 	 */
-	public fetchCourseDetails(course: Course): Promise<CourseDetails> {
-		return JsonRequest.httpGet<CourseDetails>(DataSource.APIURL + "/odata/Courses(" + course.CourseId + ")?$expand=Subject,Classes($expand=Term,Sections($expand=Meetings($expand=Instructors,Room($expand=Building))))");
+	public fetchTermCourseDetails(term: Term, course: Course): Promise<CourseDetails> {
+		return new Promise<CourseDetails>((resolve: (result) => void, reject: () => void) => {
+			JsonRequest.httpGet<CourseDetails>(DataSource.APIURL + "/odata/Courses(" + course.CourseId + ")?$expand=Subject").then((result) => {
+				JsonRequest.httpGet<Array<ClassDetails>>(DataSource.APIURL + "/odata/Classes?$filter=Course/CourseId%20eq%20" + course.CourseId + "%20and%20Term/TermId%20eq%20" + term.TermId + "&$expand=Term,Sections($expand=Meetings($expand=Instructors,Room($expand=Building)))").then((classResult) => {
+					result.Classes = classResult;
+					resolve(result);
+				}, () => {
+					reject();
+				});
+			}, () => {
+				reject();
+			});
+		});
 	}
 }
 
