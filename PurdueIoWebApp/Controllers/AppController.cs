@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace PurdueIoWebApp.Controllers
 {
+	[RequireHttps]
 	public class AppController : Controller
 	{
 		public ActionResult Index()
